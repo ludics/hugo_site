@@ -240,6 +240,15 @@ Association football, more commonly known as football or soccer,[2] is a sport p
     </item>
     
     <item>
+      <title>About me</title>
+      <link>https://ludics.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>me@ludics.cn (Lu Di)</author>
+      <guid>https://ludics.github.io/about/</guid>
+      <description>My name is Lu Di. I graduated from the Department of Electronic Engineering, Tsinghua University. I will start my graduate life at the Department of Computer Science, Tsinghua Universiy in Shenzhen in September this year. My research interest is the compression of deep learning models.</description>
+    </item>
+    
+    <item>
       <title>哈哈，测试一下</title>
       <link>https://ludics.github.io/post/first/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
