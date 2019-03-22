@@ -11,6 +11,8 @@ install:
 
 script:
     - hugo
+    - rm CNAME
+    - echo "blog.ludics.cn" >> CNAME
     - echo 'Hugo build done!'
 deploy:
   provider: pages
