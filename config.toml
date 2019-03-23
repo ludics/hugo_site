@@ -35,9 +35,9 @@ pygmentCodeFences = true
 
 [Author]
   name = "Lu Di"
-  email = "me@ludics.cn"
-  facebook = "leonludics@gmail.com"
-  googleplus = "leonludics@gmail.com" # or xxxxxxxxxxxxxxxxxxxxx
+  email = "leonludics@gmail.com"
+  facebook = "ludics"
+  #googleplus = "leonludics@gmail.com" # or xxxxxxxxxxxxxxxxxxxxx
   gitlab = "ludics"
   github = "ludics"
   #twitter = "username"
