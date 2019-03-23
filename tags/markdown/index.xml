@@ -5,8 +5,8 @@
     <link>https://ludics.github.io/tags/markdown/</link>
     <description>Recent content in Markdown on Carpe Diem</description>
     <generator>Hugo -- gohugo.io</generator>
-    <managingEditor>me@ludics.cn (Lu Di)</managingEditor>
-    <webMaster>me@ludics.cn (Lu Di)</webMaster>
+    <managingEditor>leonludics@gmail.com (Lu Di)</managingEditor>
+    <webMaster>leonludics@gmail.com (Lu Di)</webMaster>
     <lastBuildDate>Fri, 20 Feb 2015 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ludics.github.io/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
@@ -16,7 +16,7 @@
       <title>Test markdown</title>
       <link>https://ludics.github.io/post/2015-02-20-test-markdown/</link>
       <pubDate>Fri, 20 Feb 2015 00:00:00 +0000</pubDate>
-      <author>me@ludics.cn (Lu Di)</author>
+      <author>leonludics@gmail.com (Lu Di)</author>
       <guid>https://ludics.github.io/post/2015-02-20-test-markdown/</guid>
       <description>You can write regular markdown here and Jekyll will automatically convert it to a nice webpage. I strongly encourage you to take 5 minutes to learn how to write in markdown - it&amp;rsquo;ll teach you how to transform regular text into bold/italics/headings/tables/etc.
 Here is some bold text

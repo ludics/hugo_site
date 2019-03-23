@@ -5,8 +5,8 @@
     <link>https://ludics.github.io/tags/academic/</link>
     <description>Recent content in Academic on Carpe Diem</description>
     <generator>Hugo -- gohugo.io</generator>
-    <managingEditor>me@ludics.cn (Lu Di)</managingEditor>
-    <webMaster>me@ludics.cn (Lu Di)</webMaster>
+    <managingEditor>leonludics@gmail.com (Lu Di)</managingEditor>
+    <webMaster>leonludics@gmail.com (Lu Di)</webMaster>
     <lastBuildDate>Sat, 23 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ludics.github.io/tags/academic/index.xml" rel="self" type="application/rss+xml" />
@@ -16,7 +16,7 @@
       <title>Paper Reading on Model Compression</title>
       <link>https://ludics.github.io/post/2019-03-23-read-paper/</link>
       <pubDate>Sat, 23 Mar 2019 00:00:00 +0000</pubDate>
-      <author>me@ludics.cn (Lu Di)</author>
+      <author>leonludics@gmail.com (Lu Di)</author>
       <guid>https://ludics.github.io/post/2019-03-23-read-paper/</guid>
       <description>A Survey of Model Compression and Acceleration for Deep Neural Networks Abstract—Deep convolutional neural networks (CNNs) have recently achieved great success in many visual recognition tasks. However, existing deep neural network models are computationally expensive and memory intensive, hindering their deployment in devices with low memory resources or in applications with strict latency requirements. Therefore, a natural thought is to perform model compression and acceleration in deep networks without significantly decreasing the model performance.</description>
     </item>
