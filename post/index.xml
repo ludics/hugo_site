@@ -28,7 +28,7 @@
       <pubDate>Sat, 23 Mar 2019 00:00:00 +0000</pubDate>
       <author>leonludics@gmail.com (Lu Di)</author>
       <guid>https://ludics.github.io/post/2019-03-23-read-paper/</guid>
-      <description>A Survey of Model Compression and Acceleration for Deep Neural Networks Abstract—Deep convolutional neural networks (CNNs) have recently achieved great success in many visual recognition tasks. However, existing deep neural network models are computationally expensive and memory intensive, hindering their deployment in devices with low memory resources or in applications with strict latency requirements. Therefore, a natural thought is to perform model compression and acceleration in deep networks without significantly decreasing the model performance.</description>
+      <description>A Survey of Model Compression and Acceleration for Deep Neural Networks Abstract Deep convolutional neural networks (CNNs) have recently achieved great success in many visual recognition tasks. However, existing deep neural network models are computationally expensive and memory intensive, hindering their deployment in devices with low memory resources or in applications with strict latency requirements. Therefore, a natural thought is to perform model compression and acceleration in deep networks without significantly decreasing the model performance.</description>
     </item>
     
     <item>
