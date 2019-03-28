@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>leonludics@gmail.com (Lu Di)</managingEditor>
     <webMaster>leonludics@gmail.com (Lu Di)</webMaster>
-    <lastBuildDate>Sat, 23 Mar 2019 19:30:52 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 28 Mar 2019 15:20:36 +0800</lastBuildDate>
     
 	<atom:link href="https://ludics.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Paper Read on Face Recognition</title>
+      <link>https://ludics.github.io/post/paper-read-on-face-recognition/</link>
+      <pubDate>Thu, 28 Mar 2019 15:20:36 +0800</pubDate>
+      <author>leonludics@gmail.com (Lu Di)</author>
+      <guid>https://ludics.github.io/post/paper-read-on-face-recognition/</guid>
+      <description>ArcFace: Additive Angular Margin Loss for Deep Face Recognition Design of loss function that enhance discriminative power.
+ArcFace: Additive Angular Margin Loss, has a clear geometric interpretation due to the geodesic distance on the hypersphere.</description>
+    </item>
     
     <item>
       <title>Records for Site Building</title>
