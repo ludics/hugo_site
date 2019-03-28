@@ -4,7 +4,6 @@ subtitle: Compression and acceleration
 tags: ["academic"]
 date: 2019-03-23
 draft: false
-
 ---
 
 ## A Survey of Model Compression and Acceleration for Deep Neural Networks

@@ -3,6 +3,7 @@ title: Big Image Sample
 subtitle: Using Multiple Images
 date: 2017-03-07
 tags: ["example", "bigimg"]
+draft: true
 bigimg: [{src: "/img/triangle.jpg", desc: "Triangle"}, {src: "/img/sphere.jpg", desc: "Sphere"}, {src: "/img/hexagon.jpg", desc: "Hexagon"}]
 ---
 
