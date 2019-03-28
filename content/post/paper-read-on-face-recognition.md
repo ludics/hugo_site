@@ -10,3 +10,5 @@ tags: ["academic"]
 Design of loss function that enhance discriminative power.
 
 ArcFace: Additive Angular Margin Loss, has a clear geometric interpretation due to the geodesic distance on the hypersphere. 
+
+
