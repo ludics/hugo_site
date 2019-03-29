@@ -18,9 +18,10 @@
       <pubDate>Thu, 28 Mar 2019 15:20:36 +0800</pubDate>
       <author>leonludics@gmail.com (Lu Di)</author>
       <guid>https://ludics.github.io/post/paper-read-on-face-recognition/</guid>
-      <description> ArcFace: Additive Angular Margin Loss for Deep Face Recognition Design of loss function that enhance discriminative power.
+      <description>ArcFace: Additive Angular Margin Loss for Deep Face Recognition Design of loss function that enhance discriminative power.
 ArcFace: Additive Angular Margin Loss, has a clear geometric interpretation due to the geodesic distance on the hypersphere.
-Introduction </description>
+Introduction DCNNs map face image into a feature that has small intra-class and large inter-class distance.
+Two lines to train:</description>
     </item>
     
     <item>
