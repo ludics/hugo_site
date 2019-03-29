@@ -13,4 +13,6 @@ ArcFace: Additive Angular Margin Loss, has a clear geometric interpretation due 
 
 ### Introduction
 
+DCNNs map face image into a feature that has small intra-class and large inter-class distance.
 
+Two lines to train:
