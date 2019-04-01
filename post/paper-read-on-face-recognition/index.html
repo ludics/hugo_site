@@ -13,11 +13,11 @@
   <meta name="description" content="ArcFace: Additive Angular Margin Loss for Deep Face Recognition Abstract Design of loss function that enhance discriminative power.
 ArcFace: Additive Angular Margin Loss, has a clear geometric interpretation due to the geodesic distance on the hypersphere.
 Introduction DCNNs map face image into a feature that has small intra-class and large inter-class distance.
-Two lines to train: - multi-class classifier, separates different identities using softmax - learn an embedding, triplet loss(anchor, positive, negative)">
+Two lines to train: 1. multi-class classifier, separates different identities using softmax 2. learn an embedding, triplet loss(anchor, positive, negative)">
   <meta property="og:description" content="ArcFace: Additive Angular Margin Loss for Deep Face Recognition Abstract Design of loss function that enhance discriminative power.
 ArcFace: Additive Angular Margin Loss, has a clear geometric interpretation due to the geodesic distance on the hypersphere.
 Introduction DCNNs map face image into a feature that has small intra-class and large inter-class distance.
-Two lines to train: - multi-class classifier, separates different identities using softmax - learn an embedding, triplet loss(anchor, positive, negative)">
+Two lines to train: 1. multi-class classifier, separates different identities using softmax 2. learn an embedding, triplet loss(anchor, positive, negative)">
   <meta name="twitter:description" content="ArcFace: Additive Angular Margin Loss for Deep Face Recognition Abstract Design of loss function that enhance discriminative power.
 ArcFace: Additive Angular Margin Loss, has a clear geometric …">
   <meta name="author" content="Lu Di"/><script type="application/ld+json">
@@ -71,9 +71,9 @@ ArcFace: Additive Angular Margin Loss, has a clear geometric …">
   "description" : "ArcFace: Additive Angular Margin Loss for Deep Face Recognition Abstract Design of loss function that enhance discriminative power.
 ArcFace: Additive Angular Margin Loss, has a clear geometric interpretation due to the geodesic distance on the hypersphere.
 Introduction DCNNs map face image into a feature that has small intra-class and large inter-class distance.
-Two lines to train: - multi-class classifier, separates different identities using softmax - learn an embedding, triplet loss(anchor, positive, negative)",
+Two lines to train: 1. multi-class classifier, separates different identities using softmax 2. learn an embedding, triplet loss(anchor, positive, negative)",
   "inLanguage" : "en",
-  "wordCount": 76,
+  "wordCount": 83,
   "datePublished" : "2019-03-28T15:20:36",
   "dateModified" : "2019-03-28T15:20:36",
   "image" : "https://ludics.github.io/img/dico/android-chrome-192x192.png",
@@ -96,7 +96,7 @@ Two lines to train: - multi-class classifier, separates different identities usi
 <meta property="og:description" content="ArcFace: Additive Angular Margin Loss for Deep Face Recognition Abstract Design of loss function that enhance discriminative power.
 ArcFace: Additive Angular Margin Loss, has a clear geometric interpretation due to the geodesic distance on the hypersphere.
 Introduction DCNNs map face image into a feature that has small intra-class and large inter-class distance.
-Two lines to train: - multi-class classifier, separates different identities using softmax - learn an embedding, triplet loss(anchor, positive, negative)">
+Two lines to train: 1. multi-class classifier, separates different identities using softmax 2. learn an embedding, triplet loss(anchor, positive, negative)">
 <meta property="og:image" content="https://ludics.github.io/img/dico/android-chrome-192x192.png" />
 <meta property="og:url" content="https://ludics.github.io/post/paper-read-on-face-recognition/" />
 <meta property="og:type" content="website" />
@@ -311,10 +311,11 @@ ArcFace: Additive Angular Margin Loss, has a clear geometric …">
 <p>DCNNs map face image into a feature that has small intra-class and large inter-class distance.</p>
 
 <p>Two lines to train:
-- multi-class classifier, separates different identities using softmax
-- learn an embedding, triplet loss(anchor, positive, negative)</p>
+1. multi-class classifier, separates different identities using softmax
+2. learn an embedding, triplet loss(anchor, positive, negative)</p>
 
-<p>==&gt; Both have drawbacks</p>
+<p>==&gt; Both have drawbacks
+1. Softmax: $W \in R^{d \mul n}$</p>
 
 
         
