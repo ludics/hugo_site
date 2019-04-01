@@ -6,7 +6,7 @@ tags: ["academic"]
 ---
 
 ## ArcFace: Additive Angular Margin Loss for Deep Face Recognition
-
+### Abstract
 Design of loss function that enhance discriminative power.
 
 ArcFace: Additive Angular Margin Loss, has a clear geometric interpretation due to the geodesic distance on the hypersphere. 
@@ -16,3 +16,10 @@ ArcFace: Additive Angular Margin Loss, has a clear geometric interpretation due 
 DCNNs map face image into a feature that has small intra-class and large inter-class distance.
 
 Two lines to train:
+- multi-class classifier, separates different identities using softmax
+- learn an embedding, triplet loss(anchor, positive, negative)
+
+==> Both have drawbacks
+
+
+
