@@ -16,10 +16,10 @@ ArcFace: Additive Angular Margin Loss, has a clear geometric interpretation due 
 DCNNs map face image into a feature that has small intra-class and large inter-class distance.
 
 Two lines to train:
-- multi-class classifier, separates different identities using softmax
-- learn an embedding, triplet loss(anchor, positive, negative)
+1. multi-class classifier, separates different identities using softmax
+2. learn an embedding, triplet loss(anchor, positive, negative)
 
 ==> Both have drawbacks
-
+1. Softmax: $W \in R^{d \mul n}$
 
 
