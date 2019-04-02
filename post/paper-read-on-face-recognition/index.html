@@ -73,7 +73,7 @@ ArcFace: Additive Angular Margin Loss, has a clear geometric interpretation due 
 Introduction DCNNs map face image into a feature that has small intra-class and large inter-class distance.
 Two lines to train: 1. multi-class classifier, separates different identities using softmax 2. learn an embedding, triplet loss(anchor, positive, negative)",
   "inLanguage" : "en",
-  "wordCount": 163,
+  "wordCount": 262,
   "datePublished" : "2019-03-28T15:20:36",
   "dateModified" : "2019-03-28T15:20:36",
   "image" : "https://ludics.github.io/img/android-chrome-192x192.png",
@@ -315,7 +315,11 @@ ArcFace: Additive Angular Margin Loss, has a clear geometric …">
 2. learn an embedding, triplet loss(anchor, positive, negative)</p>
 
 <p>==&gt; Both have drawbacks
-1. Softmax: $$W \in R^{d \mul n}$$ increases linearly with n; learned feature separable for closed-set classification but not discriminative
+1. Softmax:
+$$
+W \in R^{d \mul n}
+$$
+increases linearly with n; learned feature separable for closed-set classification but not discriminative
 2. triplet loss: combinatorial explosion; semi-hard sample mining difficult</p>
 
 <p>Enhanced softmax:
@@ -323,7 +327,23 @@ ArcFace: Additive Angular Margin Loss, has a clear geometric …">
 2. multiplicative angular margin penalty, enforce intra-class compactness and inter-class discrepancy, leading to better discriminative. Angular margin, Sphereface.
 3. CosFace, adds cosine margin penalty to the target logit</p>
 
-<p>This paper: ArcFace, further improve discrimanative power of face recognition &amp; stabilise training process.</p>
+<p>This paper: ArcFace, further improve discrimanative power of face recognition &amp; stabilise training process. Dot product between feature &amp; last fc layer equal to the cosine distance after feature &amp; weight norm. Use arc-cosine to cal the angle between current feature &amp; target weight. Add an additive angular margin to target angle, get target logit back by cosine. Re-scale logits by fixed feature norm, subsequent same as softmax.</p>
+
+<p>Advantages:
+- Engaging, directly optimises the geodesic distance
+- Effective, achieves sota perfomance
+- Easy, easy to implement
+- Efficient, adds negligible computational complexity</p>
+
+<h3 id="proposed-approach">Proposed Approach</h3>
+
+<h4 id="arcface">ArcFace</h4>
+
+<p>Softmax loss:</p>
+
+<p>$$
+L<em>1 = -\frac{1}{N} \sum</em>{i=1}^{N} log \frac{e^{W_{y_i}^{T}x<em>i + b</em>{y<em>i}}}{\sum</em>{j=1}^n e^{W_j^T x_i + b_j}}
+$$</p>
 
 
         
