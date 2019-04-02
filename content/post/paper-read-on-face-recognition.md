@@ -20,7 +20,11 @@ Two lines to train:
 2. learn an embedding, triplet loss(anchor, positive, negative)
 
 ==> Both have drawbacks
-1. Softmax: $$W \in R^{d \mul n}$$ increases linearly with n; learned feature separable for closed-set classification but not discriminative
+1. Softmax: 
+$$
+W \in R^{d \mul n}
+$$ 
+increases linearly with n; learned feature separable for closed-set classification but not discriminative
 2. triplet loss: combinatorial explosion; semi-hard sample mining difficult
 
 Enhanced softmax: 
@@ -28,8 +32,21 @@ Enhanced softmax:
 2. multiplicative angular margin penalty, enforce intra-class compactness and inter-class discrepancy, leading to better discriminative. Angular margin, Sphereface. 
 3. CosFace, adds cosine margin penalty to the target logit
 
-This paper: ArcFace, further improve discrimanative power of face recognition & stabilise training process.
+This paper: ArcFace, further improve discrimanative power of face recognition & stabilise training process. Dot product between feature & last fc layer equal to the cosine distance after feature & weight norm. Use arc-cosine to cal the angle between current feature & target weight. Add an additive angular margin to target angle, get target logit back by cosine. Re-scale logits by fixed feature norm, subsequent same as softmax. 
 
+Advantages:
+- Engaging, directly optimises the geodesic distance
+- Effective, achieves sota perfomance
+- Easy, easy to implement
+- Efficient, adds negligible computational complexity
+
+### Proposed Approach
+#### ArcFace
+Softmax loss:
+
+$$
+L_1 = -\frac{1}{N} \sum_{i=1}^{N} log \frac{e^{W_{y_i}^{T}x_i + b_{y_i}}}{\sum_{j=1}^n e^{W_j^T x_i + b_j}}
+$$
 
 
 
