@@ -15,7 +15,7 @@ pygmentCodeFences = true
 
 [Params]
   subtitle = "Experiece the Unknown World with an Open Mind"
-  logo = "img/dico/android-chrome-192x192.png"
+  logo = "img/android-chrome-192x192.png"
   favicon = "img/dico/favicon-32x32.png"
   dateFormat = "January 2, 2006"
   commit = false
