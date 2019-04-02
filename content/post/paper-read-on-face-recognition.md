@@ -20,6 +20,16 @@ Two lines to train:
 2. learn an embedding, triplet loss(anchor, positive, negative)
 
 ==> Both have drawbacks
-1. Softmax: $W \in R^{d \mul n}$
+1. Softmax: $$W \in R^{d \mul n}$$ increases linearly with n; learned feature separable for closed-set classification but not discriminative
+2. triplet loss: combinatorial explosion; semi-hard sample mining difficult
+
+Enhanced softmax: 
+1. Centre loss by Wen et al., obtain intra-class compactness; updating centres is difficult. 
+2. multiplicative angular margin penalty, enforce intra-class compactness and inter-class discrepancy, leading to better discriminative. Angular margin, Sphereface. 
+3. CosFace, adds cosine margin penalty to the target logit
+
+This paper: ArcFace, further improve discrimanative power of face recognition & stabilise training process.
+
+
 
 
