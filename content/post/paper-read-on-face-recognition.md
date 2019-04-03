@@ -23,8 +23,8 @@ Two lines to train:
 1. Softmax: 
 
 $$
-W \in R^{d \mul n}
-$$ 
+W \in \mathbb{R}^{d \times n}
+$$
 
 increases linearly with n; learned feature separable for closed-set classification but not discriminative
 2. triplet loss: combinatorial explosion; semi-hard sample mining difficult
@@ -47,12 +47,12 @@ Advantages:
 Softmax loss:
 
 $$
-L_1 = -\frac{1}{N} \sum_{i=1}^{N} log \frac{e^{W_{y_i}^{T}x_i + b_{y_i}}}{\sum_{j=1}^n e^{W_j^T x_i + b_j}}
+L_1 = -\frac{1} {N} \sum_{i=1}^{N} log \frac{e^{W_{y_i}^{T}x_i + b_{y_i}}} {\sum_{j=1}^n e^{W_j^T x_i + b_j}}
 $$
 
-​​$$
-\frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} = 1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}} {1+\frac{e^{-8\pi}} {1+\cdots} } } }
-$$
+- Does not explicitly optimise the feature embedding, result in performance gap under large intra-class variations and large-scale test scenarios
+
+
 
 
 
