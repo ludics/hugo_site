@@ -73,7 +73,7 @@ ArcFace: Additive Angular Margin Loss, has a clear geometric interpretation due 
 Introduction DCNNs map face image into a feature that has small intra-class and large inter-class distance.
 Two lines to train: 1. multi-class classifier, separates different identities using softmax 2. learn an embedding, triplet loss(anchor, positive, negative)",
   "inLanguage" : "en",
-  "wordCount": 262,
+  "wordCount": 277,
   "datePublished" : "2019-03-28T15:20:36",
   "dateModified" : "2019-03-28T15:20:36",
   "image" : "https://ludics.github.io/img/android-chrome-192x192.png",
@@ -315,11 +315,13 @@ ArcFace: Additive Angular Margin Loss, has a clear geometric …">
 2. learn an embedding, triplet loss(anchor, positive, negative)</p>
 
 <p>==&gt; Both have drawbacks
-1. Softmax:
-$$
+1. Softmax:</p>
+
+<p>$$
 W \in R^{d \mul n}
-$$
-increases linearly with n; learned feature separable for closed-set classification but not discriminative
+$$</p>
+
+<p>increases linearly with n; learned feature separable for closed-set classification but not discriminative
 2. triplet loss: combinatorial explosion; semi-hard sample mining difficult</p>
 
 <p>Enhanced softmax:
@@ -343,6 +345,10 @@ increases linearly with n; learned feature separable for closed-set classificati
 
 <p>$$
 L<em>1 = -\frac{1}{N} \sum</em>{i=1}^{N} log \frac{e^{W_{y_i}^{T}x<em>i + b</em>{y<em>i}}}{\sum</em>{j=1}^n e^{W_j^T x_i + b_j}}
+$$</p>
+
+<p>​​$$
+\frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} = 1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}} {1+\frac{e^{-8\pi}} {1+\cdots} } } }
 $$</p>
 
 
