@@ -21,9 +21,11 @@ Two lines to train:
 
 ==> Both have drawbacks
 1. Softmax: 
+
 $$
 W \in R^{d \mul n}
 $$ 
+
 increases linearly with n; learned feature separable for closed-set classification but not discriminative
 2. triplet loss: combinatorial explosion; semi-hard sample mining difficult
 
@@ -46,6 +48,10 @@ Softmax loss:
 
 $$
 L_1 = -\frac{1}{N} \sum_{i=1}^{N} log \frac{e^{W_{y_i}^{T}x_i + b_{y_i}}}{\sum_{j=1}^n e^{W_j^T x_i + b_j}}
+$$
+
+​​$$
+\frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} = 1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}} {1+\frac{e^{-8\pi}} {1+\cdots} } } }
 $$
 
 
