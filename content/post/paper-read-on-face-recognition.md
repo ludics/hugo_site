@@ -47,7 +47,7 @@ Advantages:
 Softmax loss:
 
 $$
-L_1 = -\frac{1}{N} \sum_{i=1}^{N} {\rm log} \frac{e^{W_{y_i}^{T}x_i + b_{y_i}}}{\sum_{j=1}^n e^{W_j^T x_i + b_j}}
+L_1 = -\frac{1}{N} \sum_{i=1}^N {\rm log} \frac{e^{W_{y_i}^T x_i + b_{y_i}}}{\sum_{j=1}^n e^{W_j^T x_i + b_j}}
 $$
 
 - Does not explicitly optimise the feature embedding, result in performance gap under large intra-class variations and large-scale test scenarios
