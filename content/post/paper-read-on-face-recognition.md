@@ -47,7 +47,7 @@ Advantages:
 Softmax loss:
 
 $$
-L_1 = -\frac{1}{N} \sum_{i=1}^N {\rm log} 
+L_1 = -\frac{1}{N} \sum_{i=1}^N 
 $$
 
 $$
