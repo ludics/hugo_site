@@ -1,5 +1,5 @@
 ---
-title: "Paper Read on Face Recognition"
+title: "Paper Reading on Face Recognition"
 date: 2019-03-28T15:20:36+08:00
 draft: false
 tags: ["academic"]
@@ -47,7 +47,7 @@ Advantages:
 Softmax loss:
 
 $$
-L_1 = -\frac{1} {N} \sum_{i=1}^{N} log \frac{e^{W_{y_i}^{T}x_i + b_{y_i}}} {\sum_{j=1}^n e^{W_j^T x_i + b_j}}
+L_1 = -\frac{1}{N} \sum_{i=1}^{N} {\rm log} \frac{e^{W_{y_i}^{T}x_i + b_{y_i}}}{\sum_{j=1}^n e^{W_j^T x_i + b_j}}
 $$
 
 - Does not explicitly optimise the feature embedding, result in performance gap under large intra-class variations and large-scale test scenarios
