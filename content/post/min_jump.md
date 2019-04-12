@@ -53,7 +53,7 @@ C,F
 
 ### Python解法
 
-{{< highlight Python >}}
+{{< highlight python >}}
 l=[["A","F"], ["A","NULL"], ["B","A"], ["D","B"], ["F","B"], ["E","A"],
    ["F","E"], ["E","D"], ["D","B"], ["C","B"], ["B","G"], ["G","F"], ["C","F"]]
 start=l[0][0]
@@ -72,7 +72,7 @@ print(f(start,target))
 
 ### C++解法
 
-{{ hightlight C++}}
+{{ hightlight c++}}
 #include<iostream>
 #include<vector>
 #include<string>
