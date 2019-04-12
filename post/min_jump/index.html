@@ -21,7 +21,7 @@
  A-&gt;B-&gt;D-&gt;E-&gt;F A-&gt;E-&gt;F  此时方式2跳转次数最少，为2
 输入范例:
 A,F A,NULL B,A D,B F,B E,A F,E E,D D,B C,B B,G G,F C,F  输出范例:
-2  Python解法 l=[[&quot;A&quot;,&quot;F&quot;], [&quot;A&quot;,&quot;NULL&quot;], [&quot;B&quot;,&quot;A&quot;], [&quot;D&quot;,&quot;B&quot;], [&quot;F&quot;,&quot;B&quot;], [&quot;E&quot;,&quot;A&quot;], [&quot;F&quot;,&quot;E&quot;], [&quot;E&quot;,&quot;D&quot;], [&quot;D&quot;,&quot;B&quot;], [&quot;C&quot;,&quot;B&quot;], [&quot;B&quot;,&quot;G&quot;], [&quot;G&quot;,&quot;F&quot;], [&quot;C&quot;,&quot;F&quot;]] start=l[0][0] target=l[0][1] l=l[1:] l1=[] def f(start,target,m=0): for i in range(len(l)): if l[i][1]==start and l[i][0]==target: return m&#43;1 if l[i][1]==start and l[i][0]!">
+2  Python解法 l=[[&#34;A&#34;,&#34;F&#34;], [&#34;A&#34;,&#34;NULL&#34;], [&#34;B&#34;,&#34;A&#34;], [&#34;D&#34;,&#34;B&#34;], [&#34;F&#34;,&#34;B&#34;], [&#34;E&#34;,&#34;A&#34;], [&#34;F&#34;,&#34;E&#34;], [&#34;E&#34;,&#34;D&#34;], [&#34;D&#34;,&#34;B&#34;], [&#34;C&#34;,&#34;B&#34;], [&#34;B&#34;,&#34;G&#34;], [&#34;G&#34;,&#34;F&#34;], [&#34;C&#34;,&#34;F&#34;]] start=l[0][0] target=l[0][1] l=l[1:] l1=[] def f(start,target,m=0): for i in range(len(l)): if l[i][1]==start and l[i][0]==target: return m&#43;1 if l[i][1]==start and l[i][0]!">
   <meta property="og:description" content="页面最小跳转次数 电商网站中，web页面之间可以互相跳转。给定用户路径中的起始页面和终点页面，计算用户路径中，这两个页面间最少需要经过的跳转次数。
 请使用标准输入输出(stdin，stdout)；请把所有程序写在一个文件里，勿使用已禁用图形、文件、网络、系统相关的头文件和操作，如sys/stat.h , unistd.h , curl/curl.h , process.h
 时间限制: 1S (C/C&#43;&#43;以外的语言为: 3 S)
@@ -33,7 +33,7 @@ A,F A,NULL B,A D,B F,B E,A F,E E,D D,B C,B B,G G,F C,F  输出范例:
  A-&gt;B-&gt;D-&gt;E-&gt;F A-&gt;E-&gt;F  此时方式2跳转次数最少，为2
 输入范例:
 A,F A,NULL B,A D,B F,B E,A F,E E,D D,B C,B B,G G,F C,F  输出范例:
-2  Python解法 l=[[&quot;A&quot;,&quot;F&quot;], [&quot;A&quot;,&quot;NULL&quot;], [&quot;B&quot;,&quot;A&quot;], [&quot;D&quot;,&quot;B&quot;], [&quot;F&quot;,&quot;B&quot;], [&quot;E&quot;,&quot;A&quot;], [&quot;F&quot;,&quot;E&quot;], [&quot;E&quot;,&quot;D&quot;], [&quot;D&quot;,&quot;B&quot;], [&quot;C&quot;,&quot;B&quot;], [&quot;B&quot;,&quot;G&quot;], [&quot;G&quot;,&quot;F&quot;], [&quot;C&quot;,&quot;F&quot;]] start=l[0][0] target=l[0][1] l=l[1:] l1=[] def f(start,target,m=0): for i in range(len(l)): if l[i][1]==start and l[i][0]==target: return m&#43;1 if l[i][1]==start and l[i][0]!">
+2  Python解法 l=[[&#34;A&#34;,&#34;F&#34;], [&#34;A&#34;,&#34;NULL&#34;], [&#34;B&#34;,&#34;A&#34;], [&#34;D&#34;,&#34;B&#34;], [&#34;F&#34;,&#34;B&#34;], [&#34;E&#34;,&#34;A&#34;], [&#34;F&#34;,&#34;E&#34;], [&#34;E&#34;,&#34;D&#34;], [&#34;D&#34;,&#34;B&#34;], [&#34;C&#34;,&#34;B&#34;], [&#34;B&#34;,&#34;G&#34;], [&#34;G&#34;,&#34;F&#34;], [&#34;C&#34;,&#34;F&#34;]] start=l[0][0] target=l[0][1] l=l[1:] l1=[] def f(start,target,m=0): for i in range(len(l)): if l[i][1]==start and l[i][0]==target: return m&#43;1 if l[i][1]==start and l[i][0]!">
   <meta name="twitter:description" content="页面最小跳转次数 电商网站中，web页面之间可以互相跳转。给定用户路径中的起始页面和终点页面，计算用户路径中，这两个页面间最少需要经过的跳转次数。
 请使用标准输入输出(stdin，stdout)；请把所有程序写在一个文件里，勿使用已禁用图形、文件、网络、系统相关的头文件和操作，如sys/stat.h , unistd.h , curl/curl.h , process.h
 时间限制: 1S …">
@@ -96,9 +96,9 @@ A,F A,NULL B,A D,B F,B E,A F,E E,D D,B C,B B,G G,F C,F  输出范例:
  A-&amp;gt;B-&amp;gt;D-&amp;gt;E-&amp;gt;F A-&amp;gt;E-&amp;gt;F  此时方式2跳转次数最少，为2
 输入范例:
 A,F A,NULL B,A D,B F,B E,A F,E E,D D,B C,B B,G G,F C,F  输出范例:
-2  Python解法 l=[[&amp;quot;A&amp;quot;,&amp;quot;F&amp;quot;], [&amp;quot;A&amp;quot;,&amp;quot;NULL&amp;quot;], [&amp;quot;B&amp;quot;,&amp;quot;A&amp;quot;], [&amp;quot;D&amp;quot;,&amp;quot;B&amp;quot;], [&amp;quot;F&amp;quot;,&amp;quot;B&amp;quot;], [&amp;quot;E&amp;quot;,&amp;quot;A&amp;quot;], [&amp;quot;F&amp;quot;,&amp;quot;E&amp;quot;], [&amp;quot;E&amp;quot;,&amp;quot;D&amp;quot;], [&amp;quot;D&amp;quot;,&amp;quot;B&amp;quot;], [&amp;quot;C&amp;quot;,&amp;quot;B&amp;quot;], [&amp;quot;B&amp;quot;,&amp;quot;G&amp;quot;], [&amp;quot;G&amp;quot;,&amp;quot;F&amp;quot;], [&amp;quot;C&amp;quot;,&amp;quot;F&amp;quot;]] start=l[0][0] target=l[0][1] l=l[1:] l1=[] def f(start,target,m=0): for i in range(len(l)): if l[i][1]==start and l[i][0]==target: return m&#43;1 if l[i][1]==start and l[i][0]!",
+2  Python解法 l=[[&amp;#34;A&amp;#34;,&amp;#34;F&amp;#34;], [&amp;#34;A&amp;#34;,&amp;#34;NULL&amp;#34;], [&amp;#34;B&amp;#34;,&amp;#34;A&amp;#34;], [&amp;#34;D&amp;#34;,&amp;#34;B&amp;#34;], [&amp;#34;F&amp;#34;,&amp;#34;B&amp;#34;], [&amp;#34;E&amp;#34;,&amp;#34;A&amp;#34;], [&amp;#34;F&amp;#34;,&amp;#34;E&amp;#34;], [&amp;#34;E&amp;#34;,&amp;#34;D&amp;#34;], [&amp;#34;D&amp;#34;,&amp;#34;B&amp;#34;], [&amp;#34;C&amp;#34;,&amp;#34;B&amp;#34;], [&amp;#34;B&amp;#34;,&amp;#34;G&amp;#34;], [&amp;#34;G&amp;#34;,&amp;#34;F&amp;#34;], [&amp;#34;C&amp;#34;,&amp;#34;F&amp;#34;]] start=l[0][0] target=l[0][1] l=l[1:] l1=[] def f(start,target,m=0): for i in range(len(l)): if l[i][1]==start and l[i][0]==target: return m&#43;1 if l[i][1]==start and l[i][0]!",
   "inLanguage" : "en",
-  "wordCount": 336,
+  "wordCount": 334,
   "datePublished" : "2019-04-13T01:04:00",
   "dateModified" : "2019-04-13T01:04:00",
   "image" : "https://ludics.github.io/img/android-chrome-192x192.png",
@@ -129,7 +129,7 @@ A,F A,NULL B,A D,B F,B E,A F,E E,D D,B C,B B,G G,F C,F  输出范例:
  A-&gt;B-&gt;D-&gt;E-&gt;F A-&gt;E-&gt;F  此时方式2跳转次数最少，为2
 输入范例:
 A,F A,NULL B,A D,B F,B E,A F,E E,D D,B C,B B,G G,F C,F  输出范例:
-2  Python解法 l=[[&quot;A&quot;,&quot;F&quot;], [&quot;A&quot;,&quot;NULL&quot;], [&quot;B&quot;,&quot;A&quot;], [&quot;D&quot;,&quot;B&quot;], [&quot;F&quot;,&quot;B&quot;], [&quot;E&quot;,&quot;A&quot;], [&quot;F&quot;,&quot;E&quot;], [&quot;E&quot;,&quot;D&quot;], [&quot;D&quot;,&quot;B&quot;], [&quot;C&quot;,&quot;B&quot;], [&quot;B&quot;,&quot;G&quot;], [&quot;G&quot;,&quot;F&quot;], [&quot;C&quot;,&quot;F&quot;]] start=l[0][0] target=l[0][1] l=l[1:] l1=[] def f(start,target,m=0): for i in range(len(l)): if l[i][1]==start and l[i][0]==target: return m&#43;1 if l[i][1]==start and l[i][0]!">
+2  Python解法 l=[[&#34;A&#34;,&#34;F&#34;], [&#34;A&#34;,&#34;NULL&#34;], [&#34;B&#34;,&#34;A&#34;], [&#34;D&#34;,&#34;B&#34;], [&#34;F&#34;,&#34;B&#34;], [&#34;E&#34;,&#34;A&#34;], [&#34;F&#34;,&#34;E&#34;], [&#34;E&#34;,&#34;D&#34;], [&#34;D&#34;,&#34;B&#34;], [&#34;C&#34;,&#34;B&#34;], [&#34;B&#34;,&#34;G&#34;], [&#34;G&#34;,&#34;F&#34;], [&#34;C&#34;,&#34;F&#34;]] start=l[0][0] target=l[0][1] l=l[1:] l1=[] def f(start,target,m=0): for i in range(len(l)): if l[i][1]==start and l[i][0]==target: return m&#43;1 if l[i][1]==start and l[i][0]!">
 <meta property="og:image" content="https://ludics.github.io/img/android-chrome-192x192.png" />
 <meta property="og:url" content="https://ludics.github.io/post/min_jump/" />
 <meta property="og:type" content="website" />
@@ -382,42 +382,42 @@ C,F
 
 <h3 id="python解法">Python解法</h3>
 
-<pre><code class="language-Python">l=[[&quot;A&quot;,&quot;F&quot;], [&quot;A&quot;,&quot;NULL&quot;], [&quot;B&quot;,&quot;A&quot;], [&quot;D&quot;,&quot;B&quot;], [&quot;F&quot;,&quot;B&quot;], [&quot;E&quot;,&quot;A&quot;],
-   [&quot;F&quot;,&quot;E&quot;], [&quot;E&quot;,&quot;D&quot;], [&quot;D&quot;,&quot;B&quot;], [&quot;C&quot;,&quot;B&quot;], [&quot;B&quot;,&quot;G&quot;], [&quot;G&quot;,&quot;F&quot;], [&quot;C&quot;,&quot;F&quot;]]
-start=l[0][0]
-target=l[0][1]
-l=l[1:]
-l1=[]
-def f(start,target,m=0):
-    for i in range(len(l)):
-        if l[i][1]==start and l[i][0]==target:
-            return m+1
-        if l[i][1]==start and l[i][0]!=target:
-            l1.append(f(l[i][0],target,m+1))
-    return min(l1)
-print(f(start,target))
-</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-Python" data-lang="Python"><span class="n">l</span><span class="o">=</span><span class="p">[[</span><span class="s2">&#34;A&#34;</span><span class="p">,</span><span class="s2">&#34;F&#34;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&#34;A&#34;</span><span class="p">,</span><span class="s2">&#34;NULL&#34;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&#34;B&#34;</span><span class="p">,</span><span class="s2">&#34;A&#34;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&#34;D&#34;</span><span class="p">,</span><span class="s2">&#34;B&#34;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&#34;F&#34;</span><span class="p">,</span><span class="s2">&#34;B&#34;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&#34;E&#34;</span><span class="p">,</span><span class="s2">&#34;A&#34;</span><span class="p">],</span>
+   <span class="p">[</span><span class="s2">&#34;F&#34;</span><span class="p">,</span><span class="s2">&#34;E&#34;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&#34;E&#34;</span><span class="p">,</span><span class="s2">&#34;D&#34;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&#34;D&#34;</span><span class="p">,</span><span class="s2">&#34;B&#34;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&#34;C&#34;</span><span class="p">,</span><span class="s2">&#34;B&#34;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&#34;B&#34;</span><span class="p">,</span><span class="s2">&#34;G&#34;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&#34;G&#34;</span><span class="p">,</span><span class="s2">&#34;F&#34;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&#34;C&#34;</span><span class="p">,</span><span class="s2">&#34;F&#34;</span><span class="p">]]</span>
+<span class="n">start</span><span class="o">=</span><span class="n">l</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">target</span><span class="o">=</span><span class="n">l</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">l</span><span class="o">=</span><span class="n">l</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="n">l1</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="n">target</span><span class="p">,</span><span class="n">m</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="n">start</span> <span class="ow">and</span> <span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="n">target</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">m</span><span class="o">+</span><span class="mi">1</span>
+        <span class="k">if</span> <span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="n">start</span> <span class="ow">and</span> <span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">!=</span><span class="n">target</span><span class="p">:</span>
+            <span class="n">l1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="n">target</span><span class="p">,</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+    <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">l1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="n">target</span><span class="p">))</span></code></pre></div>
 
 <h3 id="c-解法">C++解法</h3>
 
-<pre><code class="language-C++">#include&lt;iostream&gt;
-#include&lt;vector&gt;
-#include&lt;string&gt;
-#include&lt;algorithm&gt;
-#include&lt;stack&gt;
+<p>{{ hightlight C++}}
+#include<iostream>
+#include<vector>
+#include<string>
+#include<algorithm>
+#include<stack></p>
 
-using namespace std;
+<p>using namespace std;</p>
 
-int get_index(vector&lt;string&gt;&amp; vs, string str){
-    vector&lt;string&gt;::iterator it = find(vs.begin(), vs.end(), str);
+<p>int get_index(vector<string>&amp; vs, string str){
+    vector<string>::iterator it = find(vs.begin(), vs.end(), str);
     if(it == vs.end()){
         vs.push_back(str);
         return vs.end() - vs.begin() - 1;
     }
     else return it - vs.begin();
-}
+}</p>
 
-struct Node{
+<p>struct Node{
     string data;
     int id;
     struct Node* next;
@@ -425,19 +425,19 @@ struct Node{
         data = d;
         id = i;
         next = n;
-    } 
-};
+    }
+};</p>
 
-typedef pair&lt;Node*, int&gt; node_l;
+<p>typedef pair<Node*, int> node_l;</p>
 
-int dfs(vector&lt;Node*&gt; graph, int start_id, int end_id){
-    vector&lt;int&gt; vlen;
-    stack&lt;pair&lt;Node*, int&gt; &gt; sn; 
+<p>int dfs(vector<Node*> graph, int start_id, int end_id){
+    vector<int> vlen;
+    stack<pair<Node*, int> &gt; sn;
     Node* ps = graph[start_id];
-    pair&lt;Node*, int&gt; tmp(ps, 0);
+    pair<Node*, int> tmp(ps, 0);
     sn.push(tmp);
     while(!sn.empty()){
-        pair&lt;Node*, int&gt; nl = sn.top();
+        pair<Node*, int> nl = sn.top();
         sn.pop();
         Node* p = nl.first;
         int level = nl.second;
@@ -455,20 +455,20 @@ int dfs(vector&lt;Node*&gt; graph, int start_id, int end_id){
         }
     }
     return *min(vlen.begin(), vlen.end());
-}
+}</p>
 
-int main(){
+<p>int main(){
     ios::sync_with_stdio(false);
-    vector&lt;string&gt; vs;
+    vector<string> vs;
     string start, end;
-    getline(cin, start, ',');
+    getline(cin, start, &lsquo;,&rsquo;);
     getline(cin, end);
     string from, to;
-    vector&lt;Node*&gt; graph;
+    vector<Node*> graph;
     // 建图，邻接表法表示
     while(!cin.eof()){
-        getline(cin, to, ',');
-        if(to==&quot;&quot;) break;
+        getline(cin, to, &lsquo;,&rsquo;);
+        if(to==&ldquo;&rdquo;) break;
         int id_to = get_index(vs, to);
         if(id_to &gt;= graph.size()){
             Node *nn = new Node(to, id_to);
@@ -497,7 +497,7 @@ int main(){
     cout &lt;&lt; dfs(graph, start_id, end_id) &lt;&lt; endl;
     return 0;
 }
-</code></pre>
+{{ &lt;/ highlight&gt;}}</p>
 
 
         

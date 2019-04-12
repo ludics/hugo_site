@@ -257,7 +257,7 @@
  A-&gt;B-&gt;D-&gt;E-&gt;F A-&gt;E-&gt;F  此时方式2跳转次数最少，为2
 输入范例:
 A,F A,NULL B,A D,B F,B E,A F,E E,D D,B C,B B,G G,F C,F  输出范例:
-2  Python解法 l=[[&quot;A&quot;,&quot;F&quot;], [&quot;A&quot;,&quot;NULL&quot;], [&quot;B&quot;,&quot;A&quot;], [&quot;D&quot;,&quot;B&quot;], [&quot;F&quot;,&quot;B&quot;], [&quot;E&quot;,&quot;A&quot;], [&quot;F&quot;,&quot;E&quot;], [&quot;E&quot;,&quot;D&quot;], [&quot;D&quot;,&quot;B&quot;], [&quot;C&quot;,&quot;B&quot;], [&quot;B&quot;,&quot;G&quot;], [&quot;G&quot;,&quot;F&quot;], [&quot;C&quot;,&quot;F&quot;]] start=l[0][0] target=l[0][1] l=l[1:] l1=[] def f(start,target,m=0): for i in range(len(l)): if l[i][1]==start and l[i][0]==target: return m+1 if l[i][1]==start and l[i][0]!
+2  Python解法 l=[[&#34;A&#34;,&#34;F&#34;], [&#34;A&#34;,&#34;NULL&#34;], [&#34;B&#34;,&#34;A&#34;], [&#34;D&#34;,&#34;B&#34;], [&#34;F&#34;,&#34;B&#34;], [&#34;E&#34;,&#34;A&#34;], [&#34;F&#34;,&#34;E&#34;], [&#34;E&#34;,&#34;D&#34;], [&#34;D&#34;,&#34;B&#34;], [&#34;C&#34;,&#34;B&#34;], [&#34;B&#34;,&#34;G&#34;], [&#34;G&#34;,&#34;F&#34;], [&#34;C&#34;,&#34;F&#34;]] start=l[0][0] target=l[0][1] l=l[1:] l1=[] def f(start,target,m=0): for i in range(len(l)): if l[i][1]==start and l[i][0]==target: return m+1 if l[i][1]==start and l[i][0]!
                   <a href="https://ludics.github.io/post/min_jump/" class="post-read-more">[Read More]</a>
                 
               </div>
