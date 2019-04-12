@@ -98,7 +98,7 @@ A,F A,NULL B,A D,B F,B E,A F,E E,D D,B C,B B,G G,F C,F  输出范例:
 A,F A,NULL B,A D,B F,B E,A F,E E,D D,B C,B B,G G,F C,F  输出范例:
 2  Python解法 l=[[&amp;#34;A&amp;#34;,&amp;#34;F&amp;#34;], [&amp;#34;A&amp;#34;,&amp;#34;NULL&amp;#34;], [&amp;#34;B&amp;#34;,&amp;#34;A&amp;#34;], [&amp;#34;D&amp;#34;,&amp;#34;B&amp;#34;], [&amp;#34;F&amp;#34;,&amp;#34;B&amp;#34;], [&amp;#34;E&amp;#34;,&amp;#34;A&amp;#34;], [&amp;#34;F&amp;#34;,&amp;#34;E&amp;#34;], [&amp;#34;E&amp;#34;,&amp;#34;D&amp;#34;], [&amp;#34;D&amp;#34;,&amp;#34;B&amp;#34;], [&amp;#34;C&amp;#34;,&amp;#34;B&amp;#34;], [&amp;#34;B&amp;#34;,&amp;#34;G&amp;#34;], [&amp;#34;G&amp;#34;,&amp;#34;F&amp;#34;], [&amp;#34;C&amp;#34;,&amp;#34;F&amp;#34;]] start=l[0][0] target=l[0][1] l=l[1:] l1=[] def f(start,target,m=0): for i in range(len(l)): if l[i][1]==start and l[i][0]==target: return m&#43;1 if l[i][1]==start and l[i][0]!",
   "inLanguage" : "en",
-  "wordCount": 332,
+  "wordCount": 335,
   "datePublished" : "2019-04-13T01:04:00",
   "dateModified" : "2019-04-13T01:04:00",
   "image" : "https://ludics.github.io/img/android-chrome-192x192.png",
@@ -398,6 +398,8 @@ C,F
 <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="n">target</span><span class="p">))</span></code></pre></div>
 
 <h3 id="c-解法">C++解法</h3>
+
+<p><a href="https://gist.github.com/ludics/6ad5459b6e2ddfbd9381be02949f754d">Gist Code: min_jump.cpp</a></p>
 
 <div class="highlight"><pre class="chroma"><code class="language-C" data-lang="C"><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span><span class="cp">#include</span><span class="cpf">&lt;vector&gt;</span><span class="cp">
