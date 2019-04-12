@@ -76,7 +76,7 @@ Introduction DCNNs map face image into a feature that has small intra-class and 
 Two lines to train:
  multi-class classifier, separates different identities using softmax learn an embedding, triplet loss(anchor, positive, negative)  ==&amp;gt; Both have drawbacks",
   "inLanguage" : "en",
-  "wordCount": 328,
+  "wordCount": 327,
   "datePublished" : "2019-03-28T15:20:36",
   "dateModified" : "2019-03-28T15:20:36",
   "image" : "https://ludics.github.io/img/android-chrome-192x192.png",
@@ -363,7 +363,7 @@ $$</p>
 <p>Softmax loss:</p>
 
 <p>$$
-L<em>1 = -\frac{1}{N} \sum</em>{i=1}^N {\rm log} \frac{e^{W_{y_i}^T x<em>i + b</em>{y<em>i}}}{\sum</em>{j=1}^n e^{W_j^T x_i + b_j}}
+L<em>1 = -\frac{1}{N} \sum</em>{i=1}^N \log \frac{e^{W_{y_i}^T x<em>i + b</em>{y<em>i}}}{\sum</em>{j=1}^n e^{W_j^T x_i + b_j}}
 $$</p>
 
 <ul>
