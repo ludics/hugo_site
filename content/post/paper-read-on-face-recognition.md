@@ -25,57 +25,7 @@ $$
 W \in \mathbb{R}^{d \times n}
 $$
 
-$$
-f(x) = \int_{-\infty}^\infty\hat f(\xi)\,e^{2 \pi i \xi x}\,d\xi
-$$
-
-
-​​$$
-\frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} = 1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}} {1+\frac{e^{-8\pi}} {1+\cdots} } } }
-$$
-
-$$
-1 +  \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots = \prod_{j=0}^{\infty}\frac{1}{(1-q^{5j+2})(1-q^{5j+3})}, \quad\quad \text{for }\lvert q\rvert<1.
-$$
-
-$$
-L_1 = -\frac{1}{N}
-$$
-
-$$
-\sum_{i=1}^{N}
-$$
-
-$$
-\log
-$$
-
-$$
-e^{W_{y_i}^{T} x_i + b_{y_i}}
-$$
-
-$$
-\sum_{j=1}^n e^{W_j^T x_i + b_j}
-$$
-
-$$
-\sum_{j=1}^n
-$$
-
-
-$$
-\frac{e^{W_{y_i}^T x_i + b_{y_i}}}{\sum_{j=1}^n e^{W_j^T x_i + b_j}}
-$$
-
-$$
-L_1 = -\frac{1}{N} \sum_{i=1}^N \log
-$$
-
-$$
-L_1 = -\frac{1}{N} \sum_{i=1}^N \log \frac{e^{W_{y_i}^T x_i + b_{y_i}}}{\sum_{j=1}^n e^{W_j^T x_i + b_j}}
-$$
-
-1. Softmax loss: $W \in \mathbb{R}^{d \times n}$ increases linearly with n; learned feature separable for closed-set classification but not discriminative
+1. Softmax loss: increases linearly with n; learned feature separable for closed-set classification but not discriminative
 2. Triplet loss: combinatorial explosion; semi-hard sample mining difficult
 
 Enhanced softmax: 
