@@ -72,7 +72,7 @@ print(f(start,target))
 
 ### C++解法
 
-{{ hightlight c++}}
+{{ hightlight C}}
 #include<iostream>
 #include<vector>
 #include<string>
