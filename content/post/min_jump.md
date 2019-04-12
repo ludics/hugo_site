@@ -53,7 +53,7 @@ C,F
 
 ### Python解法
 
-{{< highlight python >}}
+{{< highlight python "nowrap=false">}}
 l=[["A","F"], ["A","NULL"], ["B","A"], ["D","B"], ["F","B"], ["E","A"],
    ["F","E"], ["E","D"], ["D","B"], ["C","B"], ["B","G"], ["G","F"], ["C","F"]]
 start=l[0][0]
@@ -72,7 +72,7 @@ print(f(start,target))
 
 ### C++解法
 
-{{< highlight C >}}
+{{< highlight C "nowrap=false">}}
 #include<iostream>
 #include<vector>
 #include<string>
@@ -172,103 +172,3 @@ int main(){
 }
 {{</ highlight >}}
 
-
-```C
-#include<iostream>
-#include<vector>
-#include<string>
-#include<algorithm>
-#include<stack>
-
-using namespace std;
-
-int get_index(vector<string>& vs, string str){
-    vector<string>::iterator it = find(vs.begin(), vs.end(), str);
-    if(it == vs.end()){
-        vs.push_back(str);
-        return vs.end() - vs.begin() - 1;
-    }
-    else return it - vs.begin();
-}
-
-struct Node{
-    string data;
-    int id;
-    struct Node* next;
-    Node(string d, int i, struct Node *n=NULL) {
-        data = d;
-        id = i;
-        next = n;
-    } 
-};
-
-typedef pair<Node*, int> node_l;
-
-int dfs(vector<Node*> graph, int start_id, int end_id){
-    vector<int> vlen;
-    stack<pair<Node*, int> > sn; 
-    Node* ps = graph[start_id];
-    pair<Node*, int> tmp(ps, 0);
-    sn.push(tmp);
-    while(!sn.empty()){
-        pair<Node*, int> nl = sn.top();
-        sn.pop();
-        Node* p = nl.first;
-        int level = nl.second;
-        if(p->id == end_id){
-            vlen.push_back(level);
-            continue;
-        }
-        else{
-            p = p->next;
-            while(p){
-                tmp = make_pair(graph[p->id], level + 1);
-                sn.push(tmp);
-                p = p->next;
-            }
-        }
-    }
-    return *min(vlen.begin(), vlen.end());
-}
-
-int main(){
-    ios::sync_with_stdio(false);
-    vector<string> vs;
-    string start, end;
-    getline(cin, start, ',');
-    getline(cin, end);
-    string from, to;
-    vector<Node*> graph;
-    // 建图，邻接表法表示
-    while(!cin.eof()){
-        getline(cin, to, ',');
-        if(to=="") break;
-        int id_to = get_index(vs, to);
-        if(id_to >= graph.size()){
-            Node *nn = new Node(to, id_to);
-            graph.push_back(nn);
-        }
-        getline(cin, from);
-        int id_fr = get_index(vs, from);
-        if(id_fr >= graph.size()){
-            Node *nn_f = new Node(from, id_fr);
-            graph.push_back(nn_f);
-        }
-        Node *p, *q;
-        bool flag = true;
-        for(p = graph[id_fr]; p != NULL; p = p->next){
-            q = p;
-            if(q->data == to) flag = false;
-        }
-        if(flag){
-            Node *nn = new Node(to, id_to);
-            nn->next = NULL;
-            q->next = nn;
-        }
-    }
-    int start_id = get_index(vs, start);
-    int end_id = get_index(vs, end);
-    cout << dfs(graph, start_id, end_id) << endl;
-    return 0;
-}
-```
