@@ -98,7 +98,7 @@ A,F A,NULL B,A D,B F,B E,A F,E E,D D,B C,B B,G G,F C,F  输出范例:
 A,F A,NULL B,A D,B F,B E,A F,E E,D D,B C,B B,G G,F C,F  输出范例:
 2  Python解法 l=[[&amp;#34;A&amp;#34;,&amp;#34;F&amp;#34;], [&amp;#34;A&amp;#34;,&amp;#34;NULL&amp;#34;], [&amp;#34;B&amp;#34;,&amp;#34;A&amp;#34;], [&amp;#34;D&amp;#34;,&amp;#34;B&amp;#34;], [&amp;#34;F&amp;#34;,&amp;#34;B&amp;#34;], [&amp;#34;E&amp;#34;,&amp;#34;A&amp;#34;], [&amp;#34;F&amp;#34;,&amp;#34;E&amp;#34;], [&amp;#34;E&amp;#34;,&amp;#34;D&amp;#34;], [&amp;#34;D&amp;#34;,&amp;#34;B&amp;#34;], [&amp;#34;C&amp;#34;,&amp;#34;B&amp;#34;], [&amp;#34;B&amp;#34;,&amp;#34;G&amp;#34;], [&amp;#34;G&amp;#34;,&amp;#34;F&amp;#34;], [&amp;#34;C&amp;#34;,&amp;#34;F&amp;#34;]] start=l[0][0] target=l[0][1] l=l[1:] l1=[] def f(start,target,m=0): for i in range(len(l)): if l[i][1]==start and l[i][0]==target: return m&#43;1 if l[i][1]==start and l[i][0]!",
   "inLanguage" : "en",
-  "wordCount": 334,
+  "wordCount": 336,
   "datePublished" : "2019-04-13T01:04:00",
   "dateModified" : "2019-04-13T01:04:00",
   "image" : "https://ludics.github.io/img/android-chrome-192x192.png",
@@ -399,105 +399,104 @@ C,F
 
 <h3 id="c-解法">C++解法</h3>
 
-<p>{{ hightlight C}}
-#include<iostream>
-#include<vector>
-#include<string>
-#include<algorithm>
-#include<stack></p>
+<div class="highlight"><pre class="chroma"><code class="language-C" data-lang="C"><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp">#include</span><span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span><span class="cp">#include</span><span class="cpf">&lt;string&gt;</span><span class="cp">
+</span><span class="cp">#include</span><span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span><span class="cp">#include</span><span class="cpf">&lt;stack&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="n">using</span> <span class="n">namespace</span> <span class="n">std</span><span class="p">;</span>
 
-<p>using namespace std;</p>
+<span class="kt">int</span> <span class="nf">get_index</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">vs</span><span class="p">,</span> <span class="n">string</span> <span class="n">str</span><span class="p">){</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">it</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="n">vs</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">vs</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">str</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">it</span> <span class="o">==</span> <span class="n">vs</span><span class="p">.</span><span class="n">end</span><span class="p">()){</span>
+        <span class="n">vs</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">vs</span><span class="p">.</span><span class="n">end</span><span class="p">()</span> <span class="o">-</span> <span class="n">vs</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">return</span> <span class="n">it</span> <span class="o">-</span> <span class="n">vs</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+<span class="p">}</span>
 
-<p>int get_index(vector<string>&amp; vs, string str){
-    vector<string>::iterator it = find(vs.begin(), vs.end(), str);
-    if(it == vs.end()){
-        vs.push_back(str);
-        return vs.end() - vs.begin() - 1;
-    }
-    else return it - vs.begin();
-}</p>
+<span class="k">struct</span> <span class="n">Node</span><span class="p">{</span>
+    <span class="n">string</span> <span class="n">data</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">id</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">Node</span><span class="o">*</span> <span class="n">next</span><span class="p">;</span>
+    <span class="n">Node</span><span class="p">(</span><span class="n">string</span> <span class="n">d</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="k">struct</span> <span class="n">Node</span> <span class="o">*</span><span class="n">n</span><span class="o">=</span><span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">d</span><span class="p">;</span>
+        <span class="n">id</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+        <span class="n">next</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+    <span class="p">}</span> 
+<span class="p">};</span>
 
-<p>struct Node{
-    string data;
-    int id;
-    struct Node* next;
-    Node(string d, int i, struct Node *n=NULL) {
-        data = d;
-        id = i;
-        next = n;
-    }
-};</p>
+<span class="k">typedef</span> <span class="n">pair</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">node_l</span><span class="p">;</span>
 
-<p>typedef pair<Node*, int> node_l;</p>
+<span class="kt">int</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">*&gt;</span> <span class="n">graph</span><span class="p">,</span> <span class="kt">int</span> <span class="n">start_id</span><span class="p">,</span> <span class="kt">int</span> <span class="n">end_id</span><span class="p">){</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">vlen</span><span class="p">;</span>
+    <span class="n">stack</span><span class="o">&lt;</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="n">sn</span><span class="p">;</span> 
+    <span class="n">Node</span><span class="o">*</span> <span class="n">ps</span> <span class="o">=</span> <span class="n">graph</span><span class="p">[</span><span class="n">start_id</span><span class="p">];</span>
+    <span class="n">pair</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">tmp</span><span class="p">(</span><span class="n">ps</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="n">sn</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">tmp</span><span class="p">);</span>
+    <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">sn</span><span class="p">.</span><span class="n">empty</span><span class="p">()){</span>
+        <span class="n">pair</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">nl</span> <span class="o">=</span> <span class="n">sn</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
+        <span class="n">sn</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+        <span class="n">Node</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="n">nl</span><span class="p">.</span><span class="n">first</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">level</span> <span class="o">=</span> <span class="n">nl</span><span class="p">.</span><span class="n">second</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">id</span> <span class="o">==</span> <span class="n">end_id</span><span class="p">){</span>
+            <span class="n">vlen</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">level</span><span class="p">);</span>
+            <span class="k">continue</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span><span class="p">{</span>
+            <span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+            <span class="k">while</span><span class="p">(</span><span class="n">p</span><span class="p">){</span>
+                <span class="n">tmp</span> <span class="o">=</span> <span class="n">make_pair</span><span class="p">(</span><span class="n">graph</span><span class="p">[</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">id</span><span class="p">],</span> <span class="n">level</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+                <span class="n">sn</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">tmp</span><span class="p">);</span>
+                <span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="o">*</span><span class="n">min</span><span class="p">(</span><span class="n">vlen</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">vlen</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+<span class="p">}</span>
 
-<p>int dfs(vector<Node*> graph, int start_id, int end_id){
-    vector<int> vlen;
-    stack<pair<Node*, int> &gt; sn;
-    Node* ps = graph[start_id];
-    pair<Node*, int> tmp(ps, 0);
-    sn.push(tmp);
-    while(!sn.empty()){
-        pair<Node*, int> nl = sn.top();
-        sn.pop();
-        Node* p = nl.first;
-        int level = nl.second;
-        if(p-&gt;id == end_id){
-            vlen.push_back(level);
-            continue;
-        }
-        else{
-            p = p-&gt;next;
-            while(p){
-                tmp = make_pair(graph[p-&gt;id], level + 1);
-                sn.push(tmp);
-                p = p-&gt;next;
-            }
-        }
-    }
-    return *min(vlen.begin(), vlen.end());
-}</p>
-
-<p>int main(){
-    ios::sync_with_stdio(false);
-    vector<string> vs;
-    string start, end;
-    getline(cin, start, &lsquo;,&rsquo;);
-    getline(cin, end);
-    string from, to;
-    vector<Node*> graph;
-    // 建图，邻接表法表示
-    while(!cin.eof()){
-        getline(cin, to, &lsquo;,&rsquo;);
-        if(to==&ldquo;&rdquo;) break;
-        int id_to = get_index(vs, to);
-        if(id_to &gt;= graph.size()){
-            Node *nn = new Node(to, id_to);
-            graph.push_back(nn);
-        }
-        getline(cin, from);
-        int id_fr = get_index(vs, from);
-        if(id_fr &gt;= graph.size()){
-            Node *nn_f = new Node(from, id_fr);
-            graph.push_back(nn_f);
-        }
-        Node *p, *q;
-        bool flag = true;
-        for(p = graph[id_fr]; p != NULL; p = p-&gt;next){
-            q = p;
-            if(q-&gt;data == to) flag = false;
-        }
-        if(flag){
-            Node *nn = new Node(to, id_to);
-            nn-&gt;next = NULL;
-            q-&gt;next = nn;
-        }
-    }
-    int start_id = get_index(vs, start);
-    int end_id = get_index(vs, end);
-    cout &lt;&lt; dfs(graph, start_id, end_id) &lt;&lt; endl;
-    return 0;
-}
-{{ &lt;/ highlight&gt;}}</p>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="n">ios</span><span class="o">::</span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">vs</span><span class="p">;</span>
+    <span class="n">string</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">;</span>
+    <span class="n">getline</span><span class="p">(</span><span class="n">cin</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="sc">&#39;,&#39;</span><span class="p">);</span>
+    <span class="n">getline</span><span class="p">(</span><span class="n">cin</span><span class="p">,</span> <span class="n">end</span><span class="p">);</span>
+    <span class="n">string</span> <span class="n">from</span><span class="p">,</span> <span class="n">to</span><span class="p">;</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">Node</span><span class="o">*&gt;</span> <span class="n">graph</span><span class="p">;</span>
+    <span class="c1">// 建图，邻接表法表示
+</span><span class="c1"></span>    <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">cin</span><span class="p">.</span><span class="n">eof</span><span class="p">()){</span>
+        <span class="n">getline</span><span class="p">(</span><span class="n">cin</span><span class="p">,</span> <span class="n">to</span><span class="p">,</span> <span class="sc">&#39;,&#39;</span><span class="p">);</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">to</span><span class="o">==</span><span class="s">&#34;&#34;</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">id_to</span> <span class="o">=</span> <span class="n">get_index</span><span class="p">(</span><span class="n">vs</span><span class="p">,</span> <span class="n">to</span><span class="p">);</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">id_to</span> <span class="o">&gt;=</span> <span class="n">graph</span><span class="p">.</span><span class="n">size</span><span class="p">()){</span>
+            <span class="n">Node</span> <span class="o">*</span><span class="n">nn</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Node</span><span class="p">(</span><span class="n">to</span><span class="p">,</span> <span class="n">id_to</span><span class="p">);</span>
+            <span class="n">graph</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">nn</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">getline</span><span class="p">(</span><span class="n">cin</span><span class="p">,</span> <span class="n">from</span><span class="p">);</span>
+        <span class="kt">int</span> <span class="n">id_fr</span> <span class="o">=</span> <span class="n">get_index</span><span class="p">(</span><span class="n">vs</span><span class="p">,</span> <span class="n">from</span><span class="p">);</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">id_fr</span> <span class="o">&gt;=</span> <span class="n">graph</span><span class="p">.</span><span class="n">size</span><span class="p">()){</span>
+            <span class="n">Node</span> <span class="o">*</span><span class="n">nn_f</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Node</span><span class="p">(</span><span class="n">from</span><span class="p">,</span> <span class="n">id_fr</span><span class="p">);</span>
+            <span class="n">graph</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">nn_f</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">Node</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="o">*</span><span class="n">q</span><span class="p">;</span>
+        <span class="kt">bool</span> <span class="n">flag</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="n">p</span> <span class="o">=</span> <span class="n">graph</span><span class="p">[</span><span class="n">id_fr</span><span class="p">];</span> <span class="n">p</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">;</span> <span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">){</span>
+            <span class="n">q</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">q</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">==</span> <span class="n">to</span><span class="p">)</span> <span class="n">flag</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">flag</span><span class="p">){</span>
+            <span class="n">Node</span> <span class="o">*</span><span class="n">nn</span> <span class="o">=</span> <span class="n">new</span> <span class="n">Node</span><span class="p">(</span><span class="n">to</span><span class="p">,</span> <span class="n">id_to</span><span class="p">);</span>
+            <span class="n">nn</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+            <span class="n">q</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">nn</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="n">start_id</span> <span class="o">=</span> <span class="n">get_index</span><span class="p">(</span><span class="n">vs</span><span class="p">,</span> <span class="n">start</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">end_id</span> <span class="o">=</span> <span class="n">get_index</span><span class="p">(</span><span class="n">vs</span><span class="p">,</span> <span class="n">end</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">dfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start_id</span><span class="p">,</span> <span class="n">end_id</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">{{</span> <span class="o">&lt;/</span> <span class="n">highlight</span> <span class="o">&gt;</span><span class="p">}}</span></code></pre></div>
 
 
         
