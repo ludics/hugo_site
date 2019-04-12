@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Min Jump - Carpe Diem</title>
+  <meta property="og:title" content="Min Jump" />
+  <meta name="twitter:title" content="Min Jump" />
+  <meta name="description" content="页面最小跳转次数 电商网站中，web页面之间可以互相跳转。给定用户路径中的起始页面和终点页面，计算用户路径中，这两个页面间最少需要经过的跳转次数。
+请使用标准输入输出(stdin，stdout)；请把所有程序写在一个文件里，勿使用已禁用图形、文件、网络、系统相关的头文件和操作，如sys/stat.h , unistd.h , curl/curl.h , process.h
+时间限制: 1S (C/C&#43;&#43;以外的语言为: 3 S)
+内存限制: 64M (C/C&#43;&#43;以外的语言为: 576 M)
+输入:
+第一行包含两列，为起始页面和终止页面的名称。 第二行到最后一行为用户行为日志，其中第一列为当前页面名称，第二列为上一页面名称。第二行的NULL表示第一个页面的上级页面为空。每列数据之间以逗号&rsquo;,&lsquo;为分隔符，具体请见输入范例。
+输出:
+上述用户的行为路径中，页面A到页面F有以下两种方式
+ A-&gt;B-&gt;D-&gt;E-&gt;F A-&gt;E-&gt;F  此时方式2跳转次数最少，为2
+输入范例:
+A,F A,NULL B,A D,B F,B E,A F,E E,D D,B C,B B,G G,F C,F  输出范例:
+2  Python解法 l=[[&quot;A&quot;,&quot;F&quot;], [&quot;A&quot;,&quot;NULL&quot;], [&quot;B&quot;,&quot;A&quot;], [&quot;D&quot;,&quot;B&quot;], [&quot;F&quot;,&quot;B&quot;], [&quot;E&quot;,&quot;A&quot;], [&quot;F&quot;,&quot;E&quot;], [&quot;E&quot;,&quot;D&quot;], [&quot;D&quot;,&quot;B&quot;], [&quot;C&quot;,&quot;B&quot;], [&quot;B&quot;,&quot;G&quot;], [&quot;G&quot;,&quot;F&quot;], [&quot;C&quot;,&quot;F&quot;]] start=l[0][0] target=l[0][1] l=l[1:] l1=[] def f(start,target,m=0): for i in range(len(l)): if l[i][1]==start and l[i][0]==target: return m&#43;1 if l[i][1]==start and l[i][0]!">
+  <meta property="og:description" content="页面最小跳转次数 电商网站中，web页面之间可以互相跳转。给定用户路径中的起始页面和终点页面，计算用户路径中，这两个页面间最少需要经过的跳转次数。
+请使用标准输入输出(stdin，stdout)；请把所有程序写在一个文件里，勿使用已禁用图形、文件、网络、系统相关的头文件和操作，如sys/stat.h , unistd.h , curl/curl.h , process.h
+时间限制: 1S (C/C&#43;&#43;以外的语言为: 3 S)
+内存限制: 64M (C/C&#43;&#43;以外的语言为: 576 M)
+输入:
+第一行包含两列，为起始页面和终止页面的名称。 第二行到最后一行为用户行为日志，其中第一列为当前页面名称，第二列为上一页面名称。第二行的NULL表示第一个页面的上级页面为空。每列数据之间以逗号&rsquo;,&lsquo;为分隔符，具体请见输入范例。
+输出:
+上述用户的行为路径中，页面A到页面F有以下两种方式
+ A-&gt;B-&gt;D-&gt;E-&gt;F A-&gt;E-&gt;F  此时方式2跳转次数最少，为2
+输入范例:
+A,F A,NULL B,A D,B F,B E,A F,E E,D D,B C,B B,G G,F C,F  输出范例:
+2  Python解法 l=[[&quot;A&quot;,&quot;F&quot;], [&quot;A&quot;,&quot;NULL&quot;], [&quot;B&quot;,&quot;A&quot;], [&quot;D&quot;,&quot;B&quot;], [&quot;F&quot;,&quot;B&quot;], [&quot;E&quot;,&quot;A&quot;], [&quot;F&quot;,&quot;E&quot;], [&quot;E&quot;,&quot;D&quot;], [&quot;D&quot;,&quot;B&quot;], [&quot;C&quot;,&quot;B&quot;], [&quot;B&quot;,&quot;G&quot;], [&quot;G&quot;,&quot;F&quot;], [&quot;C&quot;,&quot;F&quot;]] start=l[0][0] target=l[0][1] l=l[1:] l1=[] def f(start,target,m=0): for i in range(len(l)): if l[i][1]==start and l[i][0]==target: return m&#43;1 if l[i][1]==start and l[i][0]!">
+  <meta name="twitter:description" content="页面最小跳转次数 电商网站中，web页面之间可以互相跳转。给定用户路径中的起始页面和终点页面，计算用户路径中，这两个页面间最少需要经过的跳转次数。
+请使用标准输入输出(stdin，stdout)；请把所有程序写在一个文件里，勿使用已禁用图形、文件、网络、系统相关的头文件和操作，如sys/stat.h , unistd.h , curl/curl.h , process.h
+时间限制: 1S …">
+  <meta name="author" content="Lu Di"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Carpe Diem",
+    
+    "url": "https://ludics.github.io"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https://ludics.github.io"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https://ludics.github.io",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https://ludics.github.io/post/min_jump/",
+          "name": "Min jump"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Lu Di"
+  },
+  "headline": "Min Jump",
+  "description" : "页面最小跳转次数 电商网站中，web页面之间可以互相跳转。给定用户路径中的起始页面和终点页面，计算用户路径中，这两个页面间最少需要经过的跳转次数。
+请使用标准输入输出(stdin，stdout)；请把所有程序写在一个文件里，勿使用已禁用图形、文件、网络、系统相关的头文件和操作，如sys/stat.h , unistd.h , curl/curl.h , process.h
+时间限制: 1S (C/C&#43;&#43;以外的语言为: 3 S)
+内存限制: 64M (C/C&#43;&#43;以外的语言为: 576 M)
+输入:
+第一行包含两列，为起始页面和终止页面的名称。 第二行到最后一行为用户行为日志，其中第一列为当前页面名称，第二列为上一页面名称。第二行的NULL表示第一个页面的上级页面为空。每列数据之间以逗号&amp;rsquo;,&amp;lsquo;为分隔符，具体请见输入范例。
+输出:
+上述用户的行为路径中，页面A到页面F有以下两种方式
+ A-&amp;gt;B-&amp;gt;D-&amp;gt;E-&amp;gt;F A-&amp;gt;E-&amp;gt;F  此时方式2跳转次数最少，为2
+输入范例:
+A,F A,NULL B,A D,B F,B E,A F,E E,D D,B C,B B,G G,F C,F  输出范例:
+2  Python解法 l=[[&amp;quot;A&amp;quot;,&amp;quot;F&amp;quot;], [&amp;quot;A&amp;quot;,&amp;quot;NULL&amp;quot;], [&amp;quot;B&amp;quot;,&amp;quot;A&amp;quot;], [&amp;quot;D&amp;quot;,&amp;quot;B&amp;quot;], [&amp;quot;F&amp;quot;,&amp;quot;B&amp;quot;], [&amp;quot;E&amp;quot;,&amp;quot;A&amp;quot;], [&amp;quot;F&amp;quot;,&amp;quot;E&amp;quot;], [&amp;quot;E&amp;quot;,&amp;quot;D&amp;quot;], [&amp;quot;D&amp;quot;,&amp;quot;B&amp;quot;], [&amp;quot;C&amp;quot;,&amp;quot;B&amp;quot;], [&amp;quot;B&amp;quot;,&amp;quot;G&amp;quot;], [&amp;quot;G&amp;quot;,&amp;quot;F&amp;quot;], [&amp;quot;C&amp;quot;,&amp;quot;F&amp;quot;]] start=l[0][0] target=l[0][1] l=l[1:] l1=[] def f(start,target,m=0): for i in range(len(l)): if l[i][1]==start and l[i][0]==target: return m&#43;1 if l[i][1]==start and l[i][0]!",
+  "inLanguage" : "en",
+  "wordCount": 336,
+  "datePublished" : "2019-04-13T01:04:00",
+  "dateModified" : "2019-04-13T01:04:00",
+  "image" : "https://ludics.github.io/img/android-chrome-192x192.png",
+  "keywords" : [ "Algorithm, Code" ],
+  "mainEntityOfPage" : "https://ludics.github.io/post/min_jump/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https://ludics.github.io",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https://ludics.github.io/img/android-chrome-192x192.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Min Jump" />
+<meta property="og:description" content="页面最小跳转次数 电商网站中，web页面之间可以互相跳转。给定用户路径中的起始页面和终点页面，计算用户路径中，这两个页面间最少需要经过的跳转次数。
+请使用标准输入输出(stdin，stdout)；请把所有程序写在一个文件里，勿使用已禁用图形、文件、网络、系统相关的头文件和操作，如sys/stat.h , unistd.h , curl/curl.h , process.h
+时间限制: 1S (C/C&#43;&#43;以外的语言为: 3 S)
+内存限制: 64M (C/C&#43;&#43;以外的语言为: 576 M)
+输入:
+第一行包含两列，为起始页面和终止页面的名称。 第二行到最后一行为用户行为日志，其中第一列为当前页面名称，第二列为上一页面名称。第二行的NULL表示第一个页面的上级页面为空。每列数据之间以逗号&rsquo;,&lsquo;为分隔符，具体请见输入范例。
+输出:
+上述用户的行为路径中，页面A到页面F有以下两种方式
+ A-&gt;B-&gt;D-&gt;E-&gt;F A-&gt;E-&gt;F  此时方式2跳转次数最少，为2
+输入范例:
+A,F A,NULL B,A D,B F,B E,A F,E E,D D,B C,B B,G G,F C,F  输出范例:
+2  Python解法 l=[[&quot;A&quot;,&quot;F&quot;], [&quot;A&quot;,&quot;NULL&quot;], [&quot;B&quot;,&quot;A&quot;], [&quot;D&quot;,&quot;B&quot;], [&quot;F&quot;,&quot;B&quot;], [&quot;E&quot;,&quot;A&quot;], [&quot;F&quot;,&quot;E&quot;], [&quot;E&quot;,&quot;D&quot;], [&quot;D&quot;,&quot;B&quot;], [&quot;C&quot;,&quot;B&quot;], [&quot;B&quot;,&quot;G&quot;], [&quot;G&quot;,&quot;F&quot;], [&quot;C&quot;,&quot;F&quot;]] start=l[0][0] target=l[0][1] l=l[1:] l1=[] def f(start,target,m=0): for i in range(len(l)): if l[i][1]==start and l[i][0]==target: return m&#43;1 if l[i][1]==start and l[i][0]!">
+<meta property="og:image" content="https://ludics.github.io/img/android-chrome-192x192.png" />
+<meta property="og:url" content="https://ludics.github.io/post/min_jump/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Carpe Diem" />
+  <meta name="twitter:title" content="Min Jump" />
+  <meta name="twitter:description" content="页面最小跳转次数 电商网站中，web页面之间可以互相跳转。给定用户路径中的起始页面和终点页面，计算用户路径中，这两个页面间最少需要经过的跳转次数。
+请使用标准输入输出(stdin，stdout)；请把所有程序写在一个文件里，勿使用已禁用图形、文件、网络、系统相关的头文件和操作，如sys/stat.h , unistd.h , curl/curl.h , process.h
+时间限制: 1S …">
+  <meta name="twitter:image" content="https://ludics.github.io/img/android-chrome-192x192.png" />
+  <meta name="twitter:card" content="summary" />
+  <link href='https://ludics.github.io/img/dico/favicon-32x32.png' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://ludics.github.io/img/android-chrome-192x192.png" />
+  <meta name="twitter:image" content="https://ludics.github.io/img/android-chrome-192x192.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://ludics.github.io/post/min_jump/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Carpe Diem" />
+
+  <meta name="generator" content="Hugo 0.54.0" />
+  <link rel="alternate" href="https://ludics.github.io/index.xml" type="application/rss+xml" title="Carpe Diem"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://ludics.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="https://ludics.github.io/css/syntax.css" /><link rel="stylesheet" href="https://ludics.github.io/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://ludics.github.io">Carpe Diem</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="https://ludics.github.io/">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="https://ludics.github.io/post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="https://ludics.github.io/post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="https://ludics.github.io/post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="https://ludics.github.io/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="https://ludics.github.io/tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Carpe Diem" href="https://ludics.github.io">
+            <img class="avatar-img" src="https://ludics.github.io/img/android-chrome-192x192.png" alt="Carpe Diem" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>Min Jump</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on April 13, 2019
+  
+  
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Lu Di
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<h2 id="页面最小跳转次数">页面最小跳转次数</h2>
+
+<p>电商网站中，web页面之间可以互相跳转。给定用户路径中的起始页面和终点页面，计算用户路径中，这两个页面间最少需要经过的跳转次数。</p>
+
+<p>请使用标准输入输出(stdin，stdout)；请把所有程序写在一个文件里，勿使用已禁用图形、文件、网络、系统相关的头文件和操作，如sys/stat.h , unistd.h , curl/curl.h , process.h</p>
+
+<p>时间限制: 1S (C/C++以外的语言为: 3 S)</p>
+
+<p>内存限制: 64M (C/C++以外的语言为: 576 M)</p>
+
+<p>输入:</p>
+
+<p>第一行包含两列，为起始页面和终止页面的名称。
+第二行到最后一行为用户行为日志，其中第一列为当前页面名称，第二列为上一页面名称。第二行的NULL表示第一个页面的上级页面为空。每列数据之间以逗号&rsquo;,&lsquo;为分隔符，具体请见输入范例。</p>
+
+<p>输出:</p>
+
+<p>上述用户的行为路径中，页面A到页面F有以下两种方式</p>
+
+<ol>
+<li>A-&gt;B-&gt;D-&gt;E-&gt;F</li>
+<li>A-&gt;E-&gt;F</li>
+</ol>
+
+<p>此时方式2跳转次数最少，为2</p>
+
+<p>输入范例:</p>
+
+<pre><code>A,F
+A,NULL
+B,A
+D,B
+F,B
+E,A
+F,E
+E,D
+D,B
+C,B
+B,G
+G,F
+C,F
+</code></pre>
+
+<p>输出范例:</p>
+
+<pre><code>2
+</code></pre>
+
+<h3 id="python解法">Python解法</h3>
+
+<pre><code class="language-Python">l=[[&quot;A&quot;,&quot;F&quot;], [&quot;A&quot;,&quot;NULL&quot;], [&quot;B&quot;,&quot;A&quot;], [&quot;D&quot;,&quot;B&quot;], [&quot;F&quot;,&quot;B&quot;], [&quot;E&quot;,&quot;A&quot;],
+   [&quot;F&quot;,&quot;E&quot;], [&quot;E&quot;,&quot;D&quot;], [&quot;D&quot;,&quot;B&quot;], [&quot;C&quot;,&quot;B&quot;], [&quot;B&quot;,&quot;G&quot;], [&quot;G&quot;,&quot;F&quot;], [&quot;C&quot;,&quot;F&quot;]]
+start=l[0][0]
+target=l[0][1]
+l=l[1:]
+l1=[]
+def f(start,target,m=0):
+    for i in range(len(l)):
+        if l[i][1]==start and l[i][0]==target:
+            return m+1
+        if l[i][1]==start and l[i][0]!=target:
+            l1.append(f(l[i][0],target,m+1))
+    return min(l1)
+print(f(start,target))
+</code></pre>
+
+<h3 id="c-解法">C++解法</h3>
+
+<pre><code class="language-C++">#include&lt;iostream&gt;
+#include&lt;vector&gt;
+#include&lt;string&gt;
+#include&lt;algorithm&gt;
+#include&lt;stack&gt;
+
+using namespace std;
+
+int get_index(vector&lt;string&gt;&amp; vs, string str){
+    vector&lt;string&gt;::iterator it = find(vs.begin(), vs.end(), str);
+    if(it == vs.end()){
+        vs.push_back(str);
+        return vs.end() - vs.begin() - 1;
+    }
+    else return it - vs.begin();
+}
+
+struct Node{
+    string data;
+    int id;
+    struct Node* next;
+    Node(string d, int i, struct Node *n=NULL) {
+        data = d;
+        id = i;
+        next = n;
+    } 
+};
+
+typedef pair&lt;Node*, int&gt; node_l;
+
+int dfs(vector&lt;Node*&gt; graph, int start_id, int end_id){
+    vector&lt;int&gt; vlen;
+    stack&lt;pair&lt;Node*, int&gt; &gt; sn; 
+    Node* ps = graph[start_id];
+    pair&lt;Node*, int&gt; tmp(ps, 0);
+    sn.push(tmp);
+    while(!sn.empty()){
+        pair&lt;Node*, int&gt; nl = sn.top();
+        sn.pop();
+        Node* p = nl.first;
+        int level = nl.second;
+        if(p-&gt;id == end_id){
+            vlen.push_back(level);
+            continue;
+        }
+        else{
+            p = p-&gt;next;
+            while(p){
+                tmp = make_pair(graph[p-&gt;id], level + 1);
+                sn.push(tmp);
+                p = p-&gt;next;
+            }
+        }
+    }
+    return *min(vlen.begin(), vlen.end());
+}
+
+int main(){
+    ios::sync_with_stdio(false);
+    vector&lt;string&gt; vs;
+    string start, end;
+    getline(cin, start, ',');
+    getline(cin, end);
+    string from, to;
+    vector&lt;Node*&gt; graph;
+    // 建图，邻接表法表示
+    while(!cin.eof()){
+        getline(cin, to, ',');
+        if(to==&quot;&quot;) break;
+        int id_to = get_index(vs, to);
+        if(id_to &gt;= graph.size()){
+            Node *nn = new Node(to, id_to);
+            graph.push_back(nn);
+        }
+        getline(cin, from);
+        int id_fr = get_index(vs, from);
+        if(id_fr &gt;= graph.size()){
+            Node *nn_f = new Node(from, id_fr);
+            graph.push_back(nn_f);
+        }
+        Node *p, *q;
+        bool flag = true;
+        for(p = graph[id_fr]; p != NULL; p = p-&gt;next){
+            q = p;
+            if(q-&gt;data == to) flag = false;
+        }
+        if(flag){
+            Node *nn = new Node(to, id_to);
+            nn-&gt;next = NULL;
+            q-&gt;next = nn;
+        }
+    }
+    int start_id = get_index(vs, start);
+    int end_id = get_index(vs, end);
+    cout &lt;&lt; dfs(graph, start_id, end_id) &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://ludics.github.io/tags/algorithm/">Algorithm</a>&nbsp;
+            
+              <a href="https://ludics.github.io/tags/code/">Code</a>&nbsp;
+            
+          </div>
+        
+
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://ludics.github.io/post/paper-read-on-face-recognition/" data-toggle="tooltip" data-placement="top" title="Paper Reading on Face Recognition">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:leonludics@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/ludics" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/ludics" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/ludics" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="https://ludics.github.io/index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Lu Di
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2019
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://ludics.github.io">Carpe Diem</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.54.0</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://ludics.github.io/js/main.js"></script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://ludics.github.io/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
+

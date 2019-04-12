@@ -225,6 +225,56 @@
           
           
             <article class="post-preview">
+              <a href="https://ludics.github.io/post/min_jump/">
+                <h2 class="post-title">Min Jump</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on April 13, 2019
+  
+  
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Lu Di
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  页面最小跳转次数 电商网站中，web页面之间可以互相跳转。给定用户路径中的起始页面和终点页面，计算用户路径中，这两个页面间最少需要经过的跳转次数。
+请使用标准输入输出(stdin，stdout)；请把所有程序写在一个文件里，勿使用已禁用图形、文件、网络、系统相关的头文件和操作，如sys/stat.h , unistd.h , curl/curl.h , process.h
+时间限制: 1S (C/C++以外的语言为: 3 S)
+内存限制: 64M (C/C++以外的语言为: 576 M)
+输入:
+第一行包含两列，为起始页面和终止页面的名称。 第二行到最后一行为用户行为日志，其中第一列为当前页面名称，第二列为上一页面名称。第二行的NULL表示第一个页面的上级页面为空。每列数据之间以逗号&rsquo;,&lsquo;为分隔符，具体请见输入范例。
+输出:
+上述用户的行为路径中，页面A到页面F有以下两种方式
+ A-&gt;B-&gt;D-&gt;E-&gt;F A-&gt;E-&gt;F  此时方式2跳转次数最少，为2
+输入范例:
+A,F A,NULL B,A D,B F,B E,A F,E E,D D,B C,B B,G G,F C,F  输出范例:
+2  Python解法 l=[[&quot;A&quot;,&quot;F&quot;], [&quot;A&quot;,&quot;NULL&quot;], [&quot;B&quot;,&quot;A&quot;], [&quot;D&quot;,&quot;B&quot;], [&quot;F&quot;,&quot;B&quot;], [&quot;E&quot;,&quot;A&quot;], [&quot;F&quot;,&quot;E&quot;], [&quot;E&quot;,&quot;D&quot;], [&quot;D&quot;,&quot;B&quot;], [&quot;C&quot;,&quot;B&quot;], [&quot;B&quot;,&quot;G&quot;], [&quot;G&quot;,&quot;F&quot;], [&quot;C&quot;,&quot;F&quot;]] start=l[0][0] target=l[0][1] l=l[1:] l1=[] def f(start,target,m=0): for i in range(len(l)): if l[i][1]==start and l[i][0]==target: return m+1 if l[i][1]==start and l[i][0]!
+                  <a href="https://ludics.github.io/post/min_jump/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+                <div class="blog-tags">
+                  
+                    <a href="https://ludics.github.io/tags/algorithm/">Algorithm</a>&nbsp;
+                  
+                    <a href="https://ludics.github.io/tags/code/">Code</a>&nbsp;
+                  
+                </div>
+              
+            </article>
+          
+            <article class="post-preview">
               <a href="https://ludics.github.io/post/paper-read-on-face-recognition/">
                 <h2 class="post-title">Paper Reading on Face Recognition</h2>
                 

@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://ludics.github.io/post/min_jump/</loc>
+    <lastmod>2019-04-13T01:04:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ludics.github.io/post/paper-read-on-face-recognition/</loc>
     <lastmod>2019-03-28T15:20:36+08:00</lastmod>
   </url>
@@ -33,13 +38,25 @@
   </url>
   
   <url>
+    <loc>https://ludics.github.io/tags/algorithm/</loc>
+    <lastmod>2019-04-13T01:04:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ludics.github.io/</loc>
-    <lastmod>2019-03-28T15:20:36+08:00</lastmod>
+    <lastmod>2019-04-13T01:04:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ludics.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ludics.github.io/tags/code/</loc>
+    <lastmod>2019-04-13T01:04:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -57,7 +74,7 @@
   
   <url>
     <loc>https://ludics.github.io/post/</loc>
-    <lastmod>2019-03-28T15:20:36+08:00</lastmod>
+    <lastmod>2019-04-13T01:04:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
