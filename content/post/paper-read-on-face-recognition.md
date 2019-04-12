@@ -21,9 +21,6 @@ Two lines to train:
 2. learn an embedding, triplet loss(anchor, positive, negative)
 
 ==> Both have drawbacks
-
-1. Softmax: 
-
 $$
 W \in \mathbb{R}^{d \times n}
 $$
@@ -41,9 +38,12 @@ $$
 1 +  \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots = \prod_{j=0}^{\infty}\frac{1}{(1-q^{5j+2})(1-q^{5j+3})}, \quad\quad \text{for }\lvert q\rvert<1.
 $$
 
-increases linearly with n; learned feature separable for closed-set classification but not discriminative
+$$
+L_1 = -\frac{1}{N} \sum_{i=1}^N \log \frac{e^{W_{y_i}^T x_i + b_{y_i}}}{\sum_{j=1}^n e^{W_j^T x_i + b_j}}
+$$
 
-2. triplet loss: combinatorial explosion; semi-hard sample mining difficult
+1. Softmax loss: increases linearly with n; learned feature separable for closed-set classification but not discriminative
+2. Triplet loss: combinatorial explosion; semi-hard sample mining difficult
 
 Enhanced softmax: 
 
