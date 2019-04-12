@@ -72,7 +72,7 @@ print(f(start,target))
 
 ### C++解法
 
-{{ hightlight C}}
+{{< highlight C >}}
 #include<iostream>
 #include<vector>
 #include<string>
@@ -170,4 +170,4 @@ int main(){
     cout << dfs(graph, start_id, end_id) << endl;
     return 0;
 }
-{{ </ highlight>}}
+{{ </ highlight >}}
