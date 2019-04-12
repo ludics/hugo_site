@@ -67,6 +67,9 @@ $$
 \frac{e^{W_{y_i}^T x_i + b_{y_i}}}{\sum_{j=1}^n e^{W_j^T x_i + b_j}}
 $$
 
+$$
+L_1 = -\frac{1}{N} \sum_{i=1}^N \log
+$$
 
 $$
 L_1 = -\frac{1}{N} \sum_{i=1}^N \log \frac{e^{W_{y_i}^T x_i + b_{y_i}}}{\sum_{j=1}^n e^{W_j^T x_i + b_j}}
