@@ -98,7 +98,7 @@ A,F A,NULL B,A D,B F,B E,A F,E E,D D,B C,B B,G G,F C,F  输出范例:
 A,F A,NULL B,A D,B F,B E,A F,E E,D D,B C,B B,G G,F C,F  输出范例:
 2  Python解法 l=[[&amp;#34;A&amp;#34;,&amp;#34;F&amp;#34;], [&amp;#34;A&amp;#34;,&amp;#34;NULL&amp;#34;], [&amp;#34;B&amp;#34;,&amp;#34;A&amp;#34;], [&amp;#34;D&amp;#34;,&amp;#34;B&amp;#34;], [&amp;#34;F&amp;#34;,&amp;#34;B&amp;#34;], [&amp;#34;E&amp;#34;,&amp;#34;A&amp;#34;], [&amp;#34;F&amp;#34;,&amp;#34;E&amp;#34;], [&amp;#34;E&amp;#34;,&amp;#34;D&amp;#34;], [&amp;#34;D&amp;#34;,&amp;#34;B&amp;#34;], [&amp;#34;C&amp;#34;,&amp;#34;B&amp;#34;], [&amp;#34;B&amp;#34;,&amp;#34;G&amp;#34;], [&amp;#34;G&amp;#34;,&amp;#34;F&amp;#34;], [&amp;#34;C&amp;#34;,&amp;#34;F&amp;#34;]] start=l[0][0] target=l[0][1] l=l[1:] l1=[] def f(start,target,m=0): for i in range(len(l)): if l[i][1]==start and l[i][0]==target: return m&#43;1 if l[i][1]==start and l[i][0]!",
   "inLanguage" : "en",
-  "wordCount": 586,
+  "wordCount": 332,
   "datePublished" : "2019-04-13T01:04:00",
   "dateModified" : "2019-04-13T01:04:00",
   "image" : "https://ludics.github.io/img/android-chrome-192x192.png",
@@ -496,105 +496,6 @@ C,F
     <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">dfs</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start_id</span><span class="p">,</span> <span class="n">end_id</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span></code></pre></div>
-
-<pre><code class="language-C">#include&lt;iostream&gt;
-#include&lt;vector&gt;
-#include&lt;string&gt;
-#include&lt;algorithm&gt;
-#include&lt;stack&gt;
-
-using namespace std;
-
-int get_index(vector&lt;string&gt;&amp; vs, string str){
-    vector&lt;string&gt;::iterator it = find(vs.begin(), vs.end(), str);
-    if(it == vs.end()){
-        vs.push_back(str);
-        return vs.end() - vs.begin() - 1;
-    }
-    else return it - vs.begin();
-}
-
-struct Node{
-    string data;
-    int id;
-    struct Node* next;
-    Node(string d, int i, struct Node *n=NULL) {
-        data = d;
-        id = i;
-        next = n;
-    } 
-};
-
-typedef pair&lt;Node*, int&gt; node_l;
-
-int dfs(vector&lt;Node*&gt; graph, int start_id, int end_id){
-    vector&lt;int&gt; vlen;
-    stack&lt;pair&lt;Node*, int&gt; &gt; sn; 
-    Node* ps = graph[start_id];
-    pair&lt;Node*, int&gt; tmp(ps, 0);
-    sn.push(tmp);
-    while(!sn.empty()){
-        pair&lt;Node*, int&gt; nl = sn.top();
-        sn.pop();
-        Node* p = nl.first;
-        int level = nl.second;
-        if(p-&gt;id == end_id){
-            vlen.push_back(level);
-            continue;
-        }
-        else{
-            p = p-&gt;next;
-            while(p){
-                tmp = make_pair(graph[p-&gt;id], level + 1);
-                sn.push(tmp);
-                p = p-&gt;next;
-            }
-        }
-    }
-    return *min(vlen.begin(), vlen.end());
-}
-
-int main(){
-    ios::sync_with_stdio(false);
-    vector&lt;string&gt; vs;
-    string start, end;
-    getline(cin, start, ',');
-    getline(cin, end);
-    string from, to;
-    vector&lt;Node*&gt; graph;
-    // 建图，邻接表法表示
-    while(!cin.eof()){
-        getline(cin, to, ',');
-        if(to==&quot;&quot;) break;
-        int id_to = get_index(vs, to);
-        if(id_to &gt;= graph.size()){
-            Node *nn = new Node(to, id_to);
-            graph.push_back(nn);
-        }
-        getline(cin, from);
-        int id_fr = get_index(vs, from);
-        if(id_fr &gt;= graph.size()){
-            Node *nn_f = new Node(from, id_fr);
-            graph.push_back(nn_f);
-        }
-        Node *p, *q;
-        bool flag = true;
-        for(p = graph[id_fr]; p != NULL; p = p-&gt;next){
-            q = p;
-            if(q-&gt;data == to) flag = false;
-        }
-        if(flag){
-            Node *nn = new Node(to, id_to);
-            nn-&gt;next = NULL;
-            q-&gt;next = nn;
-        }
-    }
-    int start_id = get_index(vs, start);
-    int end_id = get_index(vs, end);
-    cout &lt;&lt; dfs(graph, start_id, end_id) &lt;&lt; endl;
-    return 0;
-}
-</code></pre>
 
 
         
