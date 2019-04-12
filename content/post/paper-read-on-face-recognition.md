@@ -29,6 +29,7 @@ W \in \mathbb{R}^{d \times n}
 $$
 
 increases linearly with n; learned feature separable for closed-set classification but not discriminative
+
 2. triplet loss: combinatorial explosion; semi-hard sample mining difficult
 
 Enhanced softmax: 
