@@ -72,7 +72,7 @@ print(f(start,target))
 
 ### C++解法
 
-[Gist Code: min_jump.cpp](https://gist.github.com/ludics/6ad5459b6e2ddfbd9381be02949f754d)
+[Click here to see Gist Code: min_jump.cpp](https://gist.github.com/ludics/6ad5459b6e2ddfbd9381be02949f754d)
 
 {{< highlight C "nowrap=false">}}
 #include<iostream>
