@@ -76,7 +76,7 @@ Introduction DCNNs map face image into a feature that has small intra-class and 
 Two lines to train:
  multi-class classifier, separates different identities using softmax learn an embedding, triplet loss(anchor, positive, negative)  ==&amp;gt; Both have drawbacks",
   "inLanguage" : "en",
-  "wordCount": 329,
+  "wordCount": 328,
   "datePublished" : "2019-03-28T15:20:36",
   "dateModified" : "2019-03-28T15:20:36",
   "image" : "https://ludics.github.io/img/android-chrome-192x192.png",
@@ -331,8 +331,11 @@ ArcFace: Additive Angular Margin Loss, has a clear geometric …">
 W \in \mathbb{R}^{d \times n}
 $$</p>
 
-<p>increases linearly with n; learned feature separable for closed-set classification but not discriminative
-2. triplet loss: combinatorial explosion; semi-hard sample mining difficult</p>
+<p>increases linearly with n; learned feature separable for closed-set classification but not discriminative</p>
+
+<ol>
+<li>triplet loss: combinatorial explosion; semi-hard sample mining difficult</li>
+</ol>
 
 <p>Enhanced softmax:</p>
 
