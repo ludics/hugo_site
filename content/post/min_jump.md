@@ -53,7 +53,7 @@ C,F
 
 ### Python解法
 
-```Python
+{{< highlight Python >}}
 l=[["A","F"], ["A","NULL"], ["B","A"], ["D","B"], ["F","B"], ["E","A"],
    ["F","E"], ["E","D"], ["D","B"], ["C","B"], ["B","G"], ["G","F"], ["C","F"]]
 start=l[0][0]
@@ -68,11 +68,11 @@ def f(start,target,m=0):
             l1.append(f(l[i][0],target,m+1))
     return min(l1)
 print(f(start,target))
-```
+{{</ highlight >}}
 
 ### C++解法
 
-```C++
+{{ hightlight C++}}
 #include<iostream>
 #include<vector>
 #include<string>
@@ -170,4 +170,4 @@ int main(){
     cout << dfs(graph, start_id, end_id) << endl;
     return 0;
 }
-```
+{{ </ highlight>}}
