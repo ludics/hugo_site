@@ -75,7 +75,7 @@ $$
 L_1 = -\frac{1}{N} \sum_{i=1}^N \log \frac{e^{W_{y_i}^T x_i + b_{y_i}}}{\sum_{j=1}^n e^{W_j^T x_i + b_j}}
 $$
 
-1. Softmax loss: increases linearly with n; learned feature separable for closed-set classification but not discriminative
+1. Softmax loss: $W \in \mathbb{R}^{d \times n}$ increases linearly with n; learned feature separable for closed-set classification but not discriminative
 2. Triplet loss: combinatorial explosion; semi-hard sample mining difficult
 
 Enhanced softmax: 
