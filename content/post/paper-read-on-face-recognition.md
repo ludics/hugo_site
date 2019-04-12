@@ -50,12 +50,22 @@ $$
 L_1 = -\frac{1}{N} \sum_{i=1}^N {\rm log} \frac{e^{W_{y_i}^T x_i + b_{y_i}}}{\sum_{j=1}^n e^{W_j^T x_i + b_j}}
 $$
 
-$$
-W \in \mathbb{R}^{d \times n}
-$$
 - Does not explicitly optimise the feature embedding, result in performance gap under large intra-class variations and large-scale test scenarios
 
 
 
 
 
+
+
+## Support Vector Guided Softmax Loss for Face Recognition
+
+SV-Softmax, inherit the advantages of mining-based and margin-based losses into one framework.
+
+
+## Large-scale Bisample Learning on ID versus Spot Face Recognition
+
+Mainly two new methods:
+
+- CVC training strategy that enhances IvS performance
+- DP-Softmax(dominant prototype) to make scalable on large-scale classes
