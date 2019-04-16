@@ -80,11 +80,11 @@ x = x_{age} \cdot x_{id}
 $$
 
 $$
-x_{age} = \left\|x\right\|_2
+x_{age} = \parallel x \parallel _2
 $$
 
 $$
-x_{id} = \{ \frac{x_1}{\left\|x\right\|_2}, \frac{x_2}{\left\|x\right\|_2}, \cdots, \frac{x_n}{\left\|x\right\|_2},  \}
+x_{id} = \lbrace \frac{x_1}{\parallel x \parallel _2}, \frac{x_2}{\parallel x \parallel _2}, \cdots, \frac{x_n}{\parallel x \parallel _2}  \rbrace
 $$
 
 
