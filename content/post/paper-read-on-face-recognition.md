@@ -6,8 +6,12 @@ tags: ["academic"]
 ---
 
 ## ArcFace: Additive Angular Margin Loss for Deep Face Recognition
+
 ### Abstract
+
 Design of loss function that enhance discriminative power.
+
+<!--more-->
 
 ArcFace: Additive Angular Margin Loss, has a clear geometric interpretation due to the geodesic distance on the hypersphere. 
 
@@ -82,3 +86,9 @@ $$
 $$
 x_{id} = \{ \frac{x_1}{\left\|x\right\|_2}, \frac{x_2}{\left\|x\right\|_2}, \cdots, \frac{x_n}{\left\|x\right\|_2},  \}
 $$
+
+
+
+
+## Quality Aware Network for Set to Set Recognition
+
