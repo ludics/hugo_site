@@ -358,7 +358,7 @@ $$</p>
 <p>Softmax loss:</p>
 
 <p>$$
-L<em>1 = -\frac{1}{N} \sum</em>{i=1}^N \log \frac{e^{W_{y_i}^T x<em>i + b</em>{y<em>i}}}{\sum</em>{j=1}^n e^{W_j^T x_i + b_j}}
+L<em>1 = -\frac{1}{N} \sum</em>{i=1}^N \log \frac{e^{W_{y^{(i)}}^T x<em>i + b</em>{y^{(i)}}}}{\sum_{j=1}^n e^{W_j^T x_i + b_j}}
 $$</p>
 
 <ul>
@@ -383,7 +383,7 @@ $$</p>
 <p>Main Formulas:</p>
 
 <p>$$
-x = x<em>{age} * x</em>{id}
+x = x<em>{age} \cdot x</em>{id}
 $$</p>
 
 <p>$$
