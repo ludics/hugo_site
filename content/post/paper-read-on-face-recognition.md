@@ -71,3 +71,14 @@ Mainly two new methods:
 
 ## Orthogonal Deep Features Decomposition for Age-Invariant Face Recognition
 
+$$
+x = x_{age} \cdot x_{id}
+$$
+
+$$
+x_{age} = \left\|x\right\|_2
+$$
+
+$$
+x_{id} = \{ \frac{x_1}{\left\|x\right\|_2}, \frac{x_2}{\left\|x\right\|_2}, \cdots, \frac{x_n}{\left\|x\right\|_2},  \}
+$$
