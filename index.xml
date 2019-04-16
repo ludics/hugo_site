@@ -18,18 +18,9 @@
       <pubDate>Sat, 13 Apr 2019 01:04:00 +0800</pubDate>
       <author>leonludics@gmail.com (Lu Di)</author>
       <guid>https://ludics.github.io/post/min_jump/</guid>
-      <description>页面最小跳转次数 电商网站中，web页面之间可以互相跳转。给定用户路径中的起始页面和终点页面，计算用户路径中，这两个页面间最少需要经过的跳转次数。
-请使用标准输入输出(stdin，stdout)；请把所有程序写在一个文件里，勿使用已禁用图形、文件、网络、系统相关的头文件和操作，如sys/stat.h , unistd.h , curl/curl.h , process.h
-时间限制: 1S (C/C++以外的语言为: 3 S)
-内存限制: 64M (C/C++以外的语言为: 576 M)
-输入:
-第一行包含两列，为起始页面和终止页面的名称。 第二行到最后一行为用户行为日志，其中第一列为当前页面名称，第二列为上一页面名称。第二行的NULL表示第一个页面的上级页面为空。每列数据之间以逗号&amp;rsquo;,&amp;lsquo;为分隔符，具体请见输入范例。
-输出:
-上述用户的行为路径中，页面A到页面F有以下两种方式
- A-&amp;gt;B-&amp;gt;D-&amp;gt;E-&amp;gt;F A-&amp;gt;E-&amp;gt;F  此时方式2跳转次数最少，为2
-输入范例:
-A,F A,NULL B,A D,B F,B E,A F,E E,D D,B C,B B,G G,F C,F  输出范例:
-2  Python解法 l=[[&amp;#34;A&amp;#34;,&amp;#34;F&amp;#34;], [&amp;#34;A&amp;#34;,&amp;#34;NULL&amp;#34;], [&amp;#34;B&amp;#34;,&amp;#34;A&amp;#34;], [&amp;#34;D&amp;#34;,&amp;#34;B&amp;#34;], [&amp;#34;F&amp;#34;,&amp;#34;B&amp;#34;], [&amp;#34;E&amp;#34;,&amp;#34;A&amp;#34;], [&amp;#34;F&amp;#34;,&amp;#34;E&amp;#34;], [&amp;#34;E&amp;#34;,&amp;#34;D&amp;#34;], [&amp;#34;D&amp;#34;,&amp;#34;B&amp;#34;], [&amp;#34;C&amp;#34;,&amp;#34;B&amp;#34;], [&amp;#34;B&amp;#34;,&amp;#34;G&amp;#34;], [&amp;#34;G&amp;#34;,&amp;#34;F&amp;#34;], [&amp;#34;C&amp;#34;,&amp;#34;F&amp;#34;]] start=l[0][0] target=l[0][1] l=l[1:] l1=[] def f(start,target,m=0): for i in range(len(l)): if l[i][1]==start and l[i][0]==target: return m+1 if l[i][1]==start and l[i][0]!</description>
+      <description>&lt;h2 id=&#34;页面最小跳转次数&#34;&gt;页面最小跳转次数&lt;/h2&gt;
+
+&lt;p&gt;电商网站中，web页面之间可以互相跳转。给定用户路径中的起始页面和终点页面，计算用户路径中，这两个页面间最少需要经过的跳转次数。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -38,11 +29,11 @@ A,F A,NULL B,A D,B F,B E,A F,E E,D D,B C,B B,G G,F C,F  输出范例:
       <pubDate>Thu, 28 Mar 2019 15:20:36 +0800</pubDate>
       <author>leonludics@gmail.com (Lu Di)</author>
       <guid>https://ludics.github.io/post/paper-read-on-face-recognition/</guid>
-      <description>ArcFace: Additive Angular Margin Loss for Deep Face Recognition Abstract Design of loss function that enhance discriminative power.
-ArcFace: Additive Angular Margin Loss, has a clear geometric interpretation due to the geodesic distance on the hypersphere.
-Introduction DCNNs map face image into a feature that has small intra-class and large inter-class distance.
-Two lines to train:
- multi-class classifier, separates different identities using softmax learn an embedding, triplet loss(anchor, positive, negative)  ==&amp;gt; Both have drawbacks $$ W \in \mathbb{R}^{d \times n} $$</description>
+      <description>&lt;h2 id=&#34;arcface-additive-angular-margin-loss-for-deep-face-recognition&#34;&gt;ArcFace: Additive Angular Margin Loss for Deep Face Recognition&lt;/h2&gt;
+
+&lt;h3 id=&#34;abstract&#34;&gt;Abstract&lt;/h3&gt;
+
+&lt;p&gt;Design of loss function that enhance discriminative power.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -51,8 +42,7 @@ Two lines to train:
       <pubDate>Sat, 23 Mar 2019 19:30:52 +0800</pubDate>
       <author>leonludics@gmail.com (Lu Di)</author>
       <guid>https://ludics.github.io/post/records-for-site-building/</guid>
-      <description>上次建个人博客是在 2016 年，当时使用了 Hexo 框架，部署在了 Github Pages 上。最近想记录一下阅读的文献，但之前的配置文件不太好找，而且有点厌倦当时使用的主题，就决定换个框架和主题重新搭一个博客。看了许久挑选了 Hugo 框架的 Beautiful Hugo 主题。在顺风哥的指导下，又成功配置了 Travis CI。这样每次发布文章时，只需要添加 markdown 文件并提交到 source 分支，之后 Travis CI 会自动进行部署并将生成的静态博客站点推送到 ludics.github.io repo 的 master 分支。这样本地甚至不再需要配置 Hugo 环境，只需要可以执行 git 即可。
-简单记录一下，希望以后在技术上可以多多进步，那样才能多分享有价值的感悟。</description>
+      <description>&lt;p&gt;上次建个人博客是在 2016 年，当时使用了 Hexo 框架，部署在了 Github Pages 上。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -61,7 +51,7 @@ Two lines to train:
       <pubDate>Sat, 23 Mar 2019 00:00:00 +0000</pubDate>
       <author>leonludics@gmail.com (Lu Di)</author>
       <guid>https://ludics.github.io/post/2019-03-23-read-paper/</guid>
-      <description>A Survey of Model Compression and Acceleration for Deep Neural Networks Abstract Deep convolutional neural networks (CNNs) have recently achieved great success in many visual recognition tasks. However, existing deep neural network models are computationally expensive and memory intensive, hindering their deployment in devices with low memory resources or in applications with strict latency requirements. Therefore, a natural thought is to perform model compression and acceleration in deep networks without significantly decreasing the model performance.</description>
+      <description>&lt;h2 id=&#34;a-survey-of-model-compression-and-acceleration-for-deep-neural-networks&#34;&gt;A Survey of Model Compression and Acceleration for Deep Neural Networks&lt;/h2&gt;</description>
     </item>
     
     <item>
