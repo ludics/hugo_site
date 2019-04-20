@@ -77,6 +77,7 @@ Mainly two new methods:
 
 Main Formulas:
 
+
 $$
 x = x_{age} \cdot x_{id}
 $$
