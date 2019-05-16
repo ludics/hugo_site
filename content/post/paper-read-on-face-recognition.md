@@ -90,8 +90,25 @@ $$
 x_{id} = \lbrace \frac{x_1}{\parallel x \parallel _2}, \frac{x_2}{\parallel x \parallel _2}, \cdots, \frac{x_n}{\parallel x \parallel _2}  \rbrace
 $$
 
-
+Main purpose: Look the L2 length of represetation as age
 
 
 ## Quality Aware Network for Set to Set Recognition
 
+By Liu Yu
+
+Main Aim: Get the quality of image as weight to build a set represetation
+
+
+## Linkage Based Face Clustering via Graph Convolution Network
+by Wang Zhongdao
+
+GCN method to cluster face images
+
+## Learning Face Representation from Scratch
+ CASIA WebFace
+
+ Collect From IMDB, 
+
+## IARPA Janus Benchmark-B Face Dataset
+IJB Dataset
